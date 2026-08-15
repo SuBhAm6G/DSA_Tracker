@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import AppShell from '@/components/AppShell';
 import { useTheme } from '@/components/ThemeProvider';
 import { createClient } from '@/lib/supabase/client';
-import { AlertCircle, Download, Trash2, Sun, Moon, Monitor } from 'lucide-react';
+import { AlertCircle, Download, Trash2, Sun, Moon, Monitor, LogOut } from 'lucide-react';
 
 export default function SettingsPage() {
   const router = useRouter();
@@ -43,6 +43,11 @@ export default function SettingsPage() {
       programming_language: programmingLanguage
     }).eq('id', userId);
     setNameLoading(false);
+  }
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    router.push('/auth/login');
   }
 
   async function handleReset(e: React.FormEvent) {
@@ -156,6 +161,18 @@ export default function SettingsPage() {
               {nameLoading ? 'Saving…' : 'Save'}
             </button>
           </form>
+
+          <hr style={{ margin: '1.5rem 0', borderColor: 'var(--border-color)', borderTop: '2px solid' }} />
+          
+          <div>
+            <h3 style={{ marginBottom: '0.5rem' }}>Sign Out</h3>
+            <p style={{ fontSize: '0.775rem', marginBottom: '0.875rem' }}>
+              Sign out of your account on this device.
+            </p>
+            <button className="btn btn-secondary btn-sm" onClick={handleLogout} style={{ color: 'var(--danger)', borderColor: 'var(--danger)' }}>
+              <LogOut size={12} style={{ marginRight: '0.25rem' }} /> Sign Out
+            </button>
+          </div>
         </div>
 
         {/* Export */}
