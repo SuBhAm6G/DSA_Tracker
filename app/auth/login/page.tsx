@@ -13,9 +13,15 @@ export default function LoginPage() {
   const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailLoading, setEmailLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+
   async function handleGitHub() {
     setGoogleLoading(true);
     setError('');
+    setSuccessMessage('');
     const { error: err } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: { redirectTo: `${window.location.origin}/auth/callback` },
@@ -23,6 +29,52 @@ export default function LoginPage() {
     if (err) {
       setError(err.message);
       setGoogleLoading(false);
+    }
+  }
+
+  async function handleEmailAuth(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email || !password) return;
+    
+    setEmailLoading(true);
+    setError('');
+    setSuccessMessage('');
+
+    // First try to sign in
+    const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (signInError) {
+      if (signInError.message === 'Invalid login credentials') {
+        // Might be a new user, let's try to sign up
+        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+          email,
+          password,
+        });
+
+        if (signUpError) {
+          if (signUpError.message === 'User already registered') {
+            // Account exists, but sign in failed. Meaning wrong password.
+            setError('Incorrect password.');
+          } else {
+            setError(signUpError.message);
+          }
+          setEmailLoading(false);
+        } else {
+          // Sign up succeeded! But Supabase forces email confirmation on free tier.
+          setSuccessMessage('Account created! Please check your email for a confirmation link.');
+          setEmailLoading(false);
+        }
+      } else {
+        // Some other sign in error
+        setError(signInError.message);
+        setEmailLoading(false);
+      }
+    } else {
+      // Sign in succeeded
+      router.push('/');
     }
   }
 
@@ -36,16 +88,52 @@ export default function LoginPage() {
           <span className="sidebar-logo-text">DSA Tracker</span>
         </div>
 
-        <h2 style={{ marginBottom: '0.25rem' }}>Sign in</h2>
-        <p style={{ fontSize: '0.8rem', marginBottom: '1.5rem' }}>
+        <h2 style={{ marginBottom: '0.25rem' }}>Welcome back</h2>
+        <p style={{ fontSize: '0.8rem', marginBottom: '1.5rem', color: 'var(--text-muted)' }}>
           Track your DSA progress across 308 topics.
         </p>
+
+        <form onSubmit={handleEmailAuth} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.25rem' }}>
+          <div className="form-group">
+            <label className="form-label">Email</label>
+            <input 
+              type="email" 
+              className="form-input" 
+              placeholder="you@example.com" 
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Password</label>
+            <input 
+              type="password" 
+              className="form-input" 
+              placeholder="••••••••" 
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button 
+            type="submit" 
+            className="btn btn-primary w-full" 
+            disabled={emailLoading || googleLoading}
+            style={{ justifyContent: 'center', marginTop: '0.5rem' }}
+          >
+            {emailLoading ? <Loader2 size={14} className="spin" /> : null}
+            Continue with Email
+          </button>
+        </form>
+
+        <div className="auth-divider">or</div>
 
         {/* GitHub OAuth */}
         <button
           className="btn w-full"
           onClick={handleGitHub}
-          disabled={googleLoading}
+          disabled={googleLoading || emailLoading}
           id="github-login-btn"
           style={{ justifyContent: 'center', gap: '0.5rem' }}
         >
@@ -59,6 +147,11 @@ export default function LoginPage() {
           {error && (
             <p style={{ fontSize: '0.775rem', color: 'var(--danger)', marginTop: '1rem', textAlign: 'center' }}>
               {error}
+            </p>
+          )}
+          {successMessage && (
+            <p style={{ fontSize: '0.775rem', color: 'var(--success)', marginTop: '1rem', textAlign: 'center' }}>
+              {successMessage}
             </p>
           )}
       </div>
