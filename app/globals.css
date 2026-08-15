@@ -574,18 +574,51 @@ textarea.form-input {
 
 .heatmap-grid {
   display: grid;
-  grid-template-columns: repeat(53, 11px);
-  grid-template-rows: repeat(7, 11px);
+  grid-template-columns: repeat(var(--heat-weeks, 53), var(--heat-cell-size, 11px));
+  grid-template-rows: repeat(7, var(--heat-cell-size, 11px));
   gap: 2px;
-  overflow-x: auto;
 }
 
 .heat-cell {
-  width: 11px;
-  height: 11px;
+  width: var(--heat-cell-size, 11px);
+  height: var(--heat-cell-size, 11px);
   background: var(--heat-0);
   cursor: pointer;
   transition: outline 0.1s;
+}
+
+.heat-cell-empty {
+  width: var(--heat-cell-size, 11px);
+  height: var(--heat-cell-size, 11px);
+}
+
+.heatmap-shell {
+  --heat-cell-size: 11px;
+  width: max-content;
+  min-width: 100%;
+}
+
+.heatmap-months {
+  display: grid;
+  grid-template-columns: 28px repeat(var(--heat-weeks, 53), var(--heat-cell-size, 11px));
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.heatmap-body {
+  display: flex;
+  gap: 4px;
+}
+
+.heatmap-days {
+  display: grid;
+  grid-template-rows: repeat(7, var(--heat-cell-size, 11px));
+  gap: 2px;
+  width: 24px;
+}
+
+.heatmap-days > div {
+  line-height: var(--heat-cell-size, 11px);
 }
 
 .heat-cell:hover {
@@ -1149,6 +1182,7 @@ textarea.form-input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  min-width: 0;
 }
 
 .responsive-card-row {
@@ -1178,6 +1212,19 @@ textarea.form-input {
   -webkit-overflow-scrolling: touch;
 }
 
+.dashboard-lower,
+.dashboard-panel {
+  min-width: 0;
+  width: 100%;
+}
+
+.dashboard-heatmap-card {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
 .table-scroll table {
   min-width: 560px;
 }
@@ -1188,15 +1235,18 @@ textarea.form-input {
   }
 
   .sidebar {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 12px));
     transition: transform 0.2s ease;
     z-index: 200;
     width: min(86vw, 320px);
-    box-shadow: var(--shadow-lg);
+    border-right: 0;
+    box-shadow: none;
   }
 
   .sidebar.open {
     transform: translateX(0);
+    border-right: 2px solid var(--border);
+    box-shadow: var(--shadow-lg);
   }
 
   .sidebar-close-btn {
@@ -1263,6 +1313,31 @@ textarea.form-input {
   .card {
     padding: 1rem;
     box-shadow: var(--shadow-xs);
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .card:not(.dashboard-heatmap-card):not(.table-scroll) {
+    overflow: hidden;
+  }
+
+  .glass-card,
+  .auth-card,
+  .module-accordion,
+  .list-prog-item,
+  .search-box,
+  .drawer {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .responsive-card-row,
+  .card > .flex.items-center.justify-between,
+  .glass-card > .flex.items-center.justify-between {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
   .card-lg {
@@ -1300,6 +1375,30 @@ textarea.form-input {
     gap: 1rem;
   }
 
+  .dashboard-lower {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow: hidden;
+  }
+
+  .dashboard-panel {
+    margin: 0 !important;
+  }
+
+  .dashboard-activity-card {
+    padding: 0.5rem 0.875rem !important;
+  }
+
+  .dashboard-heatmap-card {
+    padding: 0.875rem;
+    width: 100%;
+  }
+
+  .dashboard-heatmap-card .heatmap-shell {
+    --heat-cell-size: 9px;
+  }
+
   .responsive-card-row {
     align-items: flex-start;
     flex-direction: column;
@@ -1333,6 +1432,15 @@ textarea.form-input {
 
   .list-prog-item {
     padding: 0.875rem 1rem;
+  }
+
+  .list-prog-header {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .list-prog-name {
+    line-height: 1.3;
   }
 
   .module-header {
@@ -1378,6 +1486,7 @@ textarea.form-input {
   .search-box {
     max-width: none;
     margin-top: 3.5rem;
+    width: 100%;
   }
 
   .search-result {
@@ -1386,16 +1495,6 @@ textarea.form-input {
 
   .search-result-path {
     white-space: normal;
-  }
-
-  .heatmap-grid {
-    grid-template-columns: repeat(53, 9px);
-    grid-template-rows: repeat(7, 9px);
-  }
-
-  .heat-cell {
-    width: 9px;
-    height: 9px;
   }
 
   .tabs {
@@ -1458,6 +1557,16 @@ textarea.form-input {
     max-width: none;
     margin: auto 0;
     padding: 1.25rem;
+  }
+
+  .modal-backdrop {
+    padding: 1rem;
+  }
+
+  .modal-backdrop .card {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 1.25rem !important;
   }
 }
 

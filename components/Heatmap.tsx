@@ -65,14 +65,9 @@ export default function Heatmap({ dayCounts, year }: Props) {
   const totalActive = Object.values(dayCounts).filter(v => v > 0).length;
 
   return (
-    <div>
+    <div className="heatmap-shell" style={{ '--heat-weeks': weeks } as React.CSSProperties}>
       {/* Month labels */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: `28px repeat(${weeks}, 11px)`,
-        gap: '2px',
-        marginBottom: '4px',
-      }}>
+      <div className="heatmap-months">
         <div /> {/* day label column */}
         {cols.map((_, colIdx) => {
           const label = monthLabels.find(m => m.col === colIdx);
@@ -88,20 +83,14 @@ export default function Heatmap({ dayCounts, year }: Props) {
         })}
       </div>
 
-      <div style={{ display: 'flex', gap: '4px' }}>
+      <div className="heatmap-body">
         {/* Day labels */}
-        <div style={{
-          display: 'grid',
-          gridTemplateRows: 'repeat(7, 11px)',
-          gap: '2px',
-          width: '24px',
-        }}>
+        <div className="heatmap-days">
           {DAYS.map((d, i) => (
             <div key={d} style={{
               fontSize: '0.58rem',
               color: 'var(--text-faint)',
               fontFamily: 'var(--font-mono)',
-              lineHeight: '11px',
               textAlign: 'right',
               paddingRight: '4px',
               opacity: i % 2 === 0 ? 1 : 0, // show alternate for spacing
@@ -114,17 +103,13 @@ export default function Heatmap({ dayCounts, year }: Props) {
         {/* Heat cells */}
         <div
           className="heatmap-grid"
-          style={{
-            gridTemplateColumns: `repeat(${weeks}, 11px)`,
-            gridTemplateRows: 'repeat(7, 11px)',
-          }}
           role="img"
           aria-label={`Activity heatmap for ${displayYear}`}
         >
           {cols.map((col, colIdx) =>
             col.map((day, rowIdx) => {
               if (!day) return (
-                <div key={`${colIdx}-${rowIdx}`} style={{ width: 11, height: 11 }} />
+                <div key={`${colIdx}-${rowIdx}`} className="heat-cell-empty" />
               );
               return (
                 <div

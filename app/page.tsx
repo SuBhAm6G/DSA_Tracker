@@ -210,10 +210,10 @@ export default function DashboardPage() {
             </div>
 
             {/* ── Bottom section: Continue + Activity + Heatmap ── */}
-            <div className="responsive-grid-2">
+            <div className="responsive-grid-2 dashboard-lower">
 
               {/* Continue Learning */}
-              <div className="section" style={{ margin: 0 }}>
+              <div className="section dashboard-panel" style={{ margin: 0 }}>
                 <div className="section-header">
                   <span className="section-title">Continue Learning</span>
                 </div>
@@ -248,7 +248,7 @@ export default function DashboardPage() {
                 <div className="section-header mt-4">
                   <span className="section-title">Recent Activity</span>
                 </div>
-                <div className="card" style={{ padding: '0.5rem 1rem' }}>
+                <div className="card dashboard-activity-card" style={{ padding: '0.5rem 1rem' }}>
                   {activity.length === 0 ? (
                     <div className="empty-state" style={{ padding: '1.5rem 0' }}>
                       <span style={{ fontSize: '0.8rem', color: 'var(--text-faint)' }}>No activity yet — complete a topic to start!</span>
@@ -270,11 +270,11 @@ export default function DashboardPage() {
               </div>
 
               {/* Heatmap */}
-              <div className="section" style={{ margin: 0 }}>
+              <div className="section dashboard-panel" style={{ margin: 0 }}>
                 <div className="section-header">
                   <span className="section-title">Activity Heatmap — {new Date().getFullYear()}</span>
                 </div>
-                <div className="card" style={{ overflowX: 'auto' }}>
+                <div className="card dashboard-heatmap-card">
                   <Heatmap dayCounts={dayCounts} />
                 </div>
               </div>
