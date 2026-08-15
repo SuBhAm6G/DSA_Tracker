@@ -1,98 +1,115 @@
 <div align="center">
 
-# ⚔️ DSA Progress Tracker
+# DSA Tracker
 
-A stunning, gamified, and highly opinionated Data Structures & Algorithms tracker built for Engineering Students. Go from **Peasant Recruit** to **Kingslayer** as you prepare for Placement OAs, Data Roles, and MAANG Interviews.
+**A focused Data Structures and Algorithms progress tracker built for students preparing for placements, OAs, internships, and product-company interviews.**
 
-[Report Bug](https://github.com/SuBhAm6G/DSA_Tracker/issues) · [Request Feature](https://github.com/SuBhAm6G/DSA_Tracker/issues)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-Postgres%20%2B%20Auth-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
+[Live Demo](https://dsatracker-seven.vercel.app/) · [Report Bug](https://github.com/SuBhAm6G/DSA_Tracker/issues) · [Request Feature](https://github.com/SuBhAm6G/DSA_Tracker/issues)
 
 </div>
 
-<br />
+## Why I Built This
 
-## 🌟 Why this exists
+DSA preparation can feel scattered for students: one sheet for arrays, another for graphs, random notes elsewhere, and no clear sense of whether you are actually interview-ready.
 
-Preparing for software engineering interviews is a massive, multi-month marathon. Most students lose motivation or track of their progress halfway through. 
+I built DSA Tracker to make that journey calmer and more structured. It gives students one place to follow a curated curriculum, track topic and subtopic progress, build consistency, and see their preparation improve over time.
 
-This tracker was built to solve that. It breaks down the monumental task of learning DSA into 4 highly-curated, tactical lists and wraps the entire experience in a beautiful, dark-mode, gamified platform. Every subtopic you master pushes you closer to your dream role.
+The goal is simple: help students spend less energy organizing prep and more energy solving problems.
 
----
+## What It Helps Students Do
 
-## 🔥 Features
+- Follow a structured DSA roadmap split across progressive preparation levels.
+- Track topic, concept, and list-wise completion.
+- Build consistency with streaks, activity history, and a contribution-style heatmap.
+- Personalize the curriculum by primary programming language.
+- Keep lightweight notes for topics while revising.
+- Understand readiness for data roles, placement OAs, and product-company interviews.
+- Export progress data whenever needed.
 
-- **🏆 Gamified Knight Progression:** An integrated 15-tier ranking system. Track your growth from a *Peasant Recruit* (Level 1) all the way to a *Kingslayer* (Level 15) as you master new topics.
-- **🎯 Milestone Trackers:** Glassmorphism target boxes constantly keep your goals in sight:
-  - *Data Role Ready* (Python-first, algorithmic focus)
-  - *Placement Ready* (Indian Placement OAs)
-  - *MAANG Ready* (Product-based company deep dive)
-- **🔥 Streaks & Heatmap:** A GitHub-style contribution heatmap and daily streak tracker to keep you coding consistently every single day.
-- **📝 Language Personalization:** Choose your primary weapon (C++, Java, Python, JavaScript, etc.).
-- **🔒 Seamless Authentication:** 1-click GitHub login powered by Supabase.
-- **✨ Premium UI/UX:** Built with Next.js, featuring Neo-brutalist styling, smooth micro-animations, and beautifully crafted components using Plus Jakarta Sans.
+## Curriculum
 
----
+The curriculum is organized into four student-friendly tracks:
 
-## 🚀 Getting Started
+| Track | Focus |
+| --- | --- |
+| Data Roles | Python-first problem solving, math, statistics-oriented patterns |
+| Placement OAs | High-frequency arrays, strings, hashing, sorting, and speed-building topics |
+| MAANG / Product | Trees, graphs, dynamic programming, recursion, and deeper interview patterns |
+| Very High Tier | Advanced DSA and competitive programming style concepts |
 
-### Prerequisites
+## Features
 
-You need [Node.js](https://nodejs.org/) (v18+) and a [Supabase](https://supabase.com/) account for the database and authentication.
+| Area | Details |
+| --- | --- |
+| Dashboard | Overall completion, current streak, daily progress, next topic, and recent activity |
+| Curriculum | Expandable modules, filters, topic/subtopic progress, and quick completion controls |
+| Milestones | Career-oriented readiness cards for student goals |
+| Analytics | Heatmap, weekly activity, cumulative progress, and list breakdowns |
+| Profile | Student progress summary and account details |
+| Settings | Theme, language preference, reset controls, and data export |
 
-### Local Installation
+## Tech Stack
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/SuBhAm6G/DSA_Tracker.git
-   cd DSA_Tracker
-   ```
+- **Framework:** Next.js 16 App Router
+- **Language:** TypeScript
+- **UI:** React, custom CSS, Lucide React
+- **Charts:** Recharts
+- **Backend:** Supabase Auth + PostgreSQL
+- **Deployment:** Vercel
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+## Local Setup
 
-3. **Set up Supabase**
-   - Create a new Supabase project.
-   - Run the SQL script found in `supabase/schema.sql` (and `supabase/rls.sql`) to set up your tables and Row Level Security.
-   - Enable GitHub OAuth in your Supabase Auth settings.
+```bash
+git clone https://github.com/SuBhAm6G/DSA_Tracker.git
+cd DSA_Tracker
+npm install
+```
 
-4. **Environment Variables**
-   Create a `.env.local` file in the root directory:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   ```
+Create `.env.local`:
 
-5. **Start the Development Server**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
----
+Set up Supabase:
 
-## 📚 The Curriculum
+```text
+1. Create a Supabase project.
+2. Run supabase/schema.sql in the SQL editor.
+3. Run supabase/rls.sql to enable row-level security policies.
+4. Enable GitHub OAuth in Supabase Auth if you want social login.
+```
 
-The curriculum is heavily curated and separated into 4 primary tactical lists:
-1. **Data Roles:** Focuses on Python, mathematical algorithms, and statistical patterns.
-2. **Indian Placement OAs:** Broad, heavy emphasis on Arrays, Strings, and general problem-solving speed required for mass-hiring OAs.
-3. **MAANG / Product:** Deep focus on Trees, Graphs, Dynamic Programming, and System Design concepts.
-4. **Very High Tier:** Competitive Programming concepts (Segment Trees, Advanced Graph Theory, Complex DP).
+Run the app:
 
-*Curriculum logic is dynamically parsed from markdown files and mapped directly into the database!*
+```bash
+npm run dev
+```
 
----
+Open `http://localhost:3000`.
 
-## 🛠️ Tech Stack
+## Deployment Notes
 
-- **Frontend:** [Next.js 14](https://nextjs.org/) (App Router), React, TypeScript
-- **Styling:** Custom Vanilla CSS (Neo-brutalist & Glassmorphism themes)
-- **Database & Auth:** [Supabase](https://supabase.com/) (PostgreSQL)
-- **Charts:** [Recharts](https://recharts.org/)
-- **Icons:** [Lucide React](https://lucide.dev/)
+The app is ready for Vercel. Add these environment variables in the Vercel project settings:
 
----
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+If using GitHub OAuth, add your deployed domain to the Supabase redirect URLs.
+
+## Student-First Philosophy
+
+This project is made for students who want a practical, distraction-free way to prepare for interviews. It is not meant to be another overwhelming sheet. It is meant to be a companion that shows what to do next, what has already been done, and how far the student has come.
 
 <div align="center">
-  <i>Created and Maintained by <a href="https://github.com/SuBhAm6G">SuBhAm Dhar</a></i>
+
+Built by [SuBhAm Dhar](https://github.com/SuBhAm6G) for students preparing seriously, one topic at a time.
+
 </div>

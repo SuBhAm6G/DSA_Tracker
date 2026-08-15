@@ -56,7 +56,7 @@ export default function Sidebar({ open, onClose }: Props) {
           <span className="sidebar-logo-text">DSA Tracker</span>
           {onClose && (
             <button
-              className="btn-icon"
+              className="btn-icon sidebar-close-btn"
               onClick={onClose}
               aria-label="Close sidebar"
               style={{ marginLeft: 'auto' }}

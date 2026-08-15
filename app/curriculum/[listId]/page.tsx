@@ -147,12 +147,12 @@ export default function CurriculumPage() {
         ) : list ? (
           <>
             {/* Stats header */}
-            <div className="card mb-4" style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
+            <div className="card mb-4 responsive-card-row">
               <div>
                 <div className="card-title mb-1">{list.name}</div>
                 <p style={{ fontSize: '0.775rem', maxWidth: 480 }}>{list.description}</p>
               </div>
-              <div style={{ marginLeft: 'auto', display: 'flex', gap: '1.5rem', flexShrink: 0 }}>
+              <div className="curriculum-mini-stats" style={{ marginLeft: 'auto', display: 'flex', gap: '1.5rem', flexShrink: 0 }}>
                 {(() => {
                   let listSubtopicsCount = 0;
                   let listCompletedSubtopicsCount = 0;
@@ -380,7 +380,7 @@ function TopicRow({
       
       {/* Subtopics List */}
       {expanded && hasSubtopics && (
-        <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '3.5rem', paddingBottom: '0.5rem', gap: '0.35rem' }}>
+        <div className="subtopic-list" style={{ display: 'flex', flexDirection: 'column', paddingLeft: '3.5rem', paddingBottom: '0.5rem', gap: '0.35rem' }}>
           {topic.subtopics!.map(st => {
             const stDone = st.progress?.status === 'completed';
             return (

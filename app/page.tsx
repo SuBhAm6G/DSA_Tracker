@@ -210,7 +210,7 @@ export default function DashboardPage() {
             </div>
 
             {/* ── Bottom section: Continue + Activity + Heatmap ── */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="responsive-grid-2">
 
               {/* Continue Learning */}
               <div className="section" style={{ margin: 0 }}>

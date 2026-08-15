@@ -106,7 +106,7 @@ export default function SettingsPage() {
         {/* Theme */}
         <div className="card mb-4">
           <h3 style={{ marginBottom: '0.875rem' }}>Theme</h3>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" style={{ flexWrap: 'wrap' }}>
             {([
               { val: 'light', label: 'Light', icon: <Sun size={13} /> },
               { val: 'dark',  label: 'Dark',  icon: <Moon size={13} /> },
@@ -127,7 +127,7 @@ export default function SettingsPage() {
         {/* Display Name */}
         <div className="card mb-4">
           <h3 style={{ marginBottom: '0.875rem' }}>Account</h3>
-          <form onSubmit={saveName} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
+          <form onSubmit={saveName} className="responsive-form-row">
             <div className="form-group" style={{ flex: 1 }}>
               <label className="form-label" htmlFor="display-name">Display name</label>
               <input
@@ -164,7 +164,7 @@ export default function SettingsPage() {
           <p style={{ fontSize: '0.775rem', marginBottom: '0.875rem' }}>
             Download all your progress, notes, and activity history.
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" style={{ flexWrap: 'wrap' }}>
             <button className="btn btn-sm btn-secondary" onClick={handleExportJSON} id="export-json-btn">
               <Download size={12} /> Export JSON
             </button>

@@ -146,7 +146,7 @@ export default function StatisticsPage() {
         {/* Per-list breakdown */}
         <div className="section">
           <div className="section-header"><span className="section-title">By List</span></div>
-          <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+          <div className="card table-scroll" style={{ padding: 0 }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
               <thead>
                 <tr style={{ background: 'var(--bg-raised)', borderBottom: '2px solid var(--border)' }}>
@@ -178,7 +178,7 @@ export default function StatisticsPage() {
         </div>
 
         {/* Charts */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
+        <div className="responsive-grid-2" style={{ marginBottom: '2rem' }}>
           {/* Cumulative progress */}
           <div className="card">
             <div className="card-title mb-4">Cumulative Topics Completed</div>

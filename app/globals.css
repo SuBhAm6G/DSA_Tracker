@@ -108,6 +108,7 @@
 html {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -116,6 +117,7 @@ body {
   color: var(--text);
   line-height: 1.5;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ============================================================
@@ -279,6 +281,10 @@ code, kbd {
   padding: 0.75rem 0;
 }
 
+.sidebar-close-btn {
+  display: none;
+}
+
 /* ============================================================
    TOPBAR (mobile + page header)
    ============================================================ */
@@ -317,6 +323,7 @@ code, kbd {
   border: 2px solid var(--border);
   box-shadow: var(--shadow-sm);
   padding: 1.25rem;
+  min-width: 0;
 }
 
 .card-sm {
@@ -389,6 +396,7 @@ code, kbd {
   transition: transform 0.05s, box-shadow 0.05s;
   text-decoration: none;
   white-space: nowrap;
+  min-height: 34px;
 }
 
 .btn:hover {
@@ -755,6 +763,8 @@ textarea.form-input {
   background: var(--bg-card);
   border: 2px solid var(--border);
   box-shadow: var(--shadow-lg);
+  max-height: 80vh;
+  overflow: hidden;
 }
 
 .search-input-wrap {
@@ -923,6 +933,12 @@ textarea.form-input {
   display: flex;
   border-bottom: 2px solid var(--border);
   gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .tab-item {
@@ -1003,6 +1019,7 @@ textarea.form-input {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.875rem;
+  gap: 0.75rem;
 }
 
 .section-title {
@@ -1128,19 +1145,68 @@ textarea.form-input {
   color: var(--text);
 }
 
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.responsive-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.responsive-form-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.curriculum-mini-stats {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.subtopic-list {
+  min-width: 0;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+  min-width: 560px;
+}
+
 @media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+
   .sidebar {
     transform: translateX(-100%);
     transition: transform 0.2s ease;
     z-index: 200;
+    width: min(86vw, 320px);
+    box-shadow: var(--shadow-lg);
   }
 
   .sidebar.open {
     transform: translateX(0);
   }
 
+  .sidebar-close-btn {
+    display: inline-flex;
+  }
+
   .main-content {
     margin-left: 0;
+    width: 100%;
+    min-width: 0;
   }
 
   .mobile-menu-btn {
@@ -1150,15 +1216,176 @@ textarea.form-input {
   }
 
   .page-inner {
-    padding: 1.25rem 1rem;
+    padding: 1rem 0.875rem 5rem;
+    max-width: 100%;
+  }
+
+  .topbar {
+    height: 56px;
+    padding: 0 0.875rem;
+  }
+
+  .topbar-title {
+    max-width: 42vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .topbar-actions {
+    gap: 0.375rem;
+  }
+
+  .topbar-actions .btn kbd,
+  .topbar-actions .btn span {
+    display: none;
+  }
+
+  .topbar-actions .btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .page-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.35rem;
+  }
+
+  .page-header p {
+    font-size: 0.825rem;
+  }
+
+  .card {
+    padding: 1rem;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .card-lg {
+    padding: 1.125rem;
+  }
+
+  .card-value {
+    font-size: 1.65rem;
+  }
+
+  .glass-card {
+    width: 100%;
+    padding: 1rem !important;
+  }
+
+  .section {
+    margin-bottom: 1.35rem;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   .stats-grid-4 {
     grid-template-columns: 1fr 1fr;
   }
 
+  .stats-grid {
+    gap: 0.75rem;
+  }
+
+  .responsive-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .responsive-card-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .responsive-card-row > * {
+    min-width: 0;
+  }
+
+  .curriculum-mini-stats {
+    width: 100%;
+    margin-left: 0 !important;
+    justify-content: space-between;
+    gap: 0.75rem !important;
+  }
+
+  .subtopic-list {
+    padding-left: 2.75rem !important;
+    padding-right: 0.875rem;
+  }
+
+  .responsive-form-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .responsive-form-row .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .list-prog-item {
+    padding: 0.875rem 1rem;
+  }
+
+  .module-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .module-name {
+    min-width: calc(100% - 32px);
+  }
+
+  .topic-row {
+    align-items: flex-start;
+    gap: 0.625rem;
+    padding: 0.75rem 0.875rem;
+  }
+
+  .topic-row-name {
+    line-height: 1.35;
+    min-width: 0;
+  }
+
+  .topic-row-ts {
+    width: 100%;
+    padding-left: 4.1rem;
+    white-space: normal;
+  }
+
   .drawer {
     width: 100vw;
+    border-left: none;
+  }
+
+  .drawer-body {
+    padding: 1rem;
+  }
+
+  .search-overlay {
+    padding: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    max-width: none;
+    margin-top: 3.5rem;
+  }
+
+  .search-result {
+    align-items: flex-start;
+  }
+
+  .search-result-path {
+    white-space: normal;
   }
 
   .heatmap-grid {
@@ -1170,15 +1397,67 @@ textarea.form-input {
     width: 9px;
     height: 9px;
   }
+
+  .tabs {
+    margin-left: -0.875rem;
+    margin-right: -0.875rem;
+    padding: 0 0.875rem;
+  }
+
+  .tab-item {
+    flex: 0 0 auto;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .toast-container {
+    right: 0.875rem;
+    left: 0.875rem;
+    bottom: 0.875rem;
+  }
+
+  .toast {
+    max-width: none;
+  }
 }
 
 @media (max-width: 480px) {
   .stats-grid-4 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   
   .stats-grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-title {
+    font-size: 0.68rem;
+  }
+
+  .card-value-sm {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    min-height: 36px;
+  }
+
+  .btn-sm {
+    padding: 0.375rem 0.625rem;
+  }
+
+  .auth-page {
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .auth-card {
+    max-width: none;
+    margin: auto 0;
+    padding: 1.25rem;
   }
 }
 

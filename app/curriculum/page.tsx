@@ -28,7 +28,7 @@ export default function CurriculumIndexPage() {
                 role="button"
                 id={`list-card-${idx + 1}`}
               >
-                <div className="flex items-center justify-between">
+                <div className="responsive-card-row">
                   <div>
                     <div style={{ fontSize: '0.65rem', color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>0{idx + 1}</div>
                     <h2 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>{list.name}</h2>

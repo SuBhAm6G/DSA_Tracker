@@ -60,10 +60,10 @@ export default function ProfilePage() {
           <h1>Profile</h1>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', maxWidth: 720 }}>
+        <div className="responsive-grid-2" style={{ maxWidth: 720 }}>
           {/* Profile card */}
           <div className="card" style={{ gridColumn: '1 / -1' }}>
-            <div className="flex items-center gap-4">
+            <div className="responsive-card-row">
               <div style={{
                 width: 56, height: 56,
                 background: 'var(--accent)',
