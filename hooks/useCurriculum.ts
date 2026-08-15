@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { createClient } from '@/lib/supabase/client';
-import type { ListWithModules, ModuleWithTopics, TopicWithProgress, UserTopicProgress, UserSubtopicProgress, SubtopicWithProgress } from '@/lib/supabase/types';
+import type { CompletionStatus, ListWithModules, ModuleWithTopics, TopicWithProgress, UserTopicProgress, UserSubtopicProgress, SubtopicWithProgress } from '@/lib/supabase/types';
 import curriculumJson from '@/app/data/curriculum.json';
 import { applyLanguageVirtualTopics } from '@/lib/virtualTopics';
 import { pct } from '@/lib/utils';
@@ -107,7 +107,7 @@ export function useCurriculum() {
 
   useEffect(() => { load(); }, [load]);
 
-  async function _upsertSubtopics(stUpdates: {slug: string, status: string, completedAt: string|null}[]) {
+  async function _upsertSubtopics(stUpdates: { slug: string; status: CompletionStatus; completedAt: string | null }[]) {
     if (!userId || !stUpdates.length) return;
     const rows = stUpdates.map(u => ({
       user_id: userId,
@@ -129,7 +129,7 @@ export function useCurriculum() {
     });
   }
 
-  async function _upsertTopic(topicSlug: string, topicDbId: string, status: string, completedAt: string|null) {
+  async function _upsertTopic(topicSlug: string, topicDbId: string, status: CompletionStatus, completedAt: string | null) {
     if (!userId) return;
     await supabase.from('user_topic_progress').upsert({
       user_id:      userId,
@@ -150,11 +150,11 @@ export function useCurriculum() {
   async function toggleTopic(
     topicSlug: string,
     topicDbId: string,
-    currentStatus: string | undefined,
+    currentStatus: CompletionStatus | undefined,
     onError: (msg: string) => void
   ) {
     if (!userId) return;
-    const newStatus = currentStatus === 'completed' ? 'not_started' : 'completed';
+    const newStatus: CompletionStatus = currentStatus === 'completed' ? 'not_started' : 'completed';
     const completedAt = newStatus === 'completed' ? new Date().toISOString() : null;
 
     // Find the topic to see if it has subtopics
@@ -206,11 +206,11 @@ export function useCurriculum() {
   async function toggleSubtopic(
     topic: TopicWithProgress,
     subtopicSlug: string,
-    currentStatus: string | undefined,
+    currentStatus: CompletionStatus | undefined,
     onError: (msg: string) => void
   ) {
     if (!userId) return;
-    const newStatus = currentStatus === 'completed' ? 'not_started' : 'completed';
+    const newStatus: CompletionStatus = currentStatus === 'completed' ? 'not_started' : 'completed';
     const completedAt = newStatus === 'completed' ? new Date().toISOString() : null;
 
     const siblings = topic.subtopics || [];
@@ -228,7 +228,7 @@ export function useCurriculum() {
       }
     }
 
-    const newParentStatus = willCompleteParent ? 'completed' : willUncompleteParent ? 'not_started' : topic.progress?.status ?? 'not_started';
+    const newParentStatus: CompletionStatus = willCompleteParent ? 'completed' : willUncompleteParent ? 'not_started' : topic.progress?.status ?? 'not_started';
     const parentCompletedAt = willCompleteParent ? new Date().toISOString() : willUncompleteParent ? null : topic.progress?.completed_at ?? null;
 
     // Optimistically update lists

@@ -4,6 +4,16 @@
 
 export type CompletionStatus = 'not_started' | 'in_progress' | 'completed';
 export type EventType = 'topic_completed' | 'topic_reopened' | 'topic_started' | 'milestone_achieved' | 'subtopic_completed' | 'subtopic_reopened';
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
+
+type DbRecord<T> = T & Record<string, unknown>;
+
+type Table<Row, Insert = Partial<Row>, Update = Partial<Row>> = {
+  Row: DbRecord<Row>;
+  Insert: DbRecord<Insert>;
+  Update: DbRecord<Update>;
+  Relationships: [];
+};
 
 export interface Profile {
   id: string;
@@ -79,7 +89,7 @@ export interface ActivityEvent {
   user_id: string;
   event_type: EventType;
   topic_id: string | null;
-  metadata: Record<string, unknown>;
+  metadata: Json;
   created_at: string;
 }
 
@@ -123,17 +133,19 @@ export interface ListWithModules extends CurriculumList {
 export interface Database {
   public: {
     Tables: {
-      profiles: { Row: Profile; Insert: Partial<Profile>; Update: Partial<Profile> };
-      curriculum_lists: { Row: CurriculumList; Insert: Partial<CurriculumList>; Update: Partial<CurriculumList> };
-      modules: { Row: Module; Insert: Partial<Module>; Update: Partial<Module> };
-      topics: { Row: Topic; Insert: Partial<Topic>; Update: Partial<Topic> };
-      subtopics: { Row: Subtopic; Insert: Partial<Subtopic>; Update: Partial<Subtopic> };
-      user_topic_progress: { Row: UserTopicProgress; Insert: Partial<UserTopicProgress>; Update: Partial<UserTopicProgress> };
-      user_subtopic_progress: { Row: UserSubtopicProgress; Insert: Partial<UserSubtopicProgress>; Update: Partial<UserSubtopicProgress> };
-      topic_notes: { Row: TopicNote; Insert: Partial<TopicNote>; Update: Partial<TopicNote> };
-      activity_events: { Row: ActivityEvent; Insert: Partial<ActivityEvent>; Update: Partial<ActivityEvent> };
-      user_milestones: { Row: UserMilestone; Insert: Partial<UserMilestone>; Update: Partial<UserMilestone> };
-      user_preferences: { Row: UserPreferences; Insert: Partial<UserPreferences>; Update: Partial<UserPreferences> };
+      profiles: Table<Profile>;
+      curriculum_lists: Table<CurriculumList>;
+      modules: Table<Module>;
+      topics: Table<Topic>;
+      subtopics: Table<Subtopic>;
+      user_topic_progress: Table<UserTopicProgress>;
+      user_subtopic_progress: Table<UserSubtopicProgress>;
+      topic_notes: Table<TopicNote>;
+      activity_events: Table<ActivityEvent>;
+      user_milestones: Table<UserMilestone>;
+      user_preferences: Table<UserPreferences>;
     };
+    Views: {};
+    Functions: {};
   };
 }

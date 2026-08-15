@@ -62,6 +62,7 @@ CREATE TABLE IF NOT EXISTS profiles (
   display_name  TEXT,
   email         TEXT,
   timezone      TEXT NOT NULL DEFAULT 'UTC',
+  programming_language TEXT,
   created_at    TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -144,7 +145,7 @@ CREATE TABLE IF NOT EXISTS activity_events (
   id         UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   user_id    UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
   event_type TEXT NOT NULL
-               CHECK (event_type IN ('topic_completed','topic_reopened','topic_started','milestone_achieved')),
+               CHECK (event_type IN ('topic_completed','topic_reopened','topic_started','milestone_achieved','subtopic_completed','subtopic_reopened')),
   topic_id   UUID REFERENCES topics(id) ON DELETE SET NULL,
   metadata   JSONB NOT NULL DEFAULT '{}',
   created_at TIMESTAMPTZ DEFAULT NOW()
