@@ -197,10 +197,32 @@ CREATE TRIGGER on_auth_user_created_prefs
   FOR EACH ROW EXECUTE FUNCTION handle_new_user_prefs();
 
 -- ============================================================
+-- USER SUBTOPIC PROGRESS
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS user_subtopic_progress (
+  id           UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id      UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  subtopic_id  TEXT NOT NULL,
+  status       TEXT NOT NULL DEFAULT 'not_started'
+                 CHECK (status IN ('not_started', 'in_progress', 'completed')),
+  completed_at TIMESTAMPTZ,
+  updated_at   TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (user_id, subtopic_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_ustp_user_id ON user_subtopic_progress(user_id);
+CREATE INDEX IF NOT EXISTS idx_ustp_user_subtopic ON user_subtopic_progress(user_id, subtopic_id);
+
+CREATE TRIGGER ustp_updated_at
+  BEFORE UPDATE ON user_subtopic_progress
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+
+-- ============================================================
 -- HELPER: daily activity counts view
 -- ============================================================
 
-CREATE OR REPLACE VIEW user_daily_activity AS
+CREATE OR REPLACE VIEW user_daily_activity WITH (security_invoker = true) AS
 SELECT
   user_id,
   (created_at AT TIME ZONE 'UTC')::DATE AS activity_date,

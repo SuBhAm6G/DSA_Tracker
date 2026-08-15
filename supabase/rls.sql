@@ -58,6 +58,24 @@ CREATE POLICY "Users can delete own progress" ON user_topic_progress
   FOR DELETE USING (auth.uid() = user_id);
 
 -- ============================================================
+-- USER SUBTOPIC PROGRESS (own rows only)
+-- ============================================================
+
+ALTER TABLE user_subtopic_progress ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can read own subtopic progress" ON user_subtopic_progress
+  FOR SELECT USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can insert own subtopic progress" ON user_subtopic_progress
+  FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own subtopic progress" ON user_subtopic_progress
+  FOR UPDATE USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can delete own subtopic progress" ON user_subtopic_progress
+  FOR DELETE USING (auth.uid() = user_id);
+
+-- ============================================================
 -- TOPIC NOTES (own rows only)
 -- ============================================================
 
