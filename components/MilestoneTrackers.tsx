@@ -57,7 +57,7 @@ export default function MilestoneTrackers({ lists }: Props) {
         {milestones.map((m, i) => {
           const pct = m.total > 0 ? Math.round((m.completed / m.total) * 100) : 0;
           // Determine link slug based on the milestone number
-          const linkSlug = i === 0 ? 'list-1-data-roles' : i === 1 ? 'list-2-indian-placement' : 'list-3-maang-product';
+          const linkSlug = i === 0 ? 'list-1' : i === 1 ? 'list-2' : 'list-3';
           
           return (
             <Link key={m.id} href={`/curriculum/${linkSlug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
