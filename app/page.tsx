@@ -8,7 +8,7 @@ import Heatmap from '@/components/Heatmap';
 import { useCurriculum } from '@/hooks/useCurriculum';
 import { createClient } from '@/lib/supabase/client';
 import { pct, computeStreaks, toDateKey, startOfWeekISO, relativeTime } from '@/lib/utils';
-import type { ActivityEvent } from '@/lib/supabase/types';
+import type { ActivityEvent, EventType } from '@/lib/supabase/types';
 import MilestoneTrackers from '@/components/MilestoneTrackers';
 import { getRank, getNextRank } from '@/lib/levels';
 
@@ -36,7 +36,7 @@ export default function DashboardPage() {
       .eq('user_id', user.id)
       .in('event_type', ['topic_completed', 'subtopic_completed'])
       .order('created_at', { ascending: false })
-      .limit(500) as unknown as { data: Array<{ id: string; user_id: string; created_at: string; event_type: string; topic_id: string | null; metadata: any }> | null };
+      .limit(500) as unknown as { data: Array<{ id: string; user_id: string; created_at: string; event_type: EventType; topic_id: string | null; metadata: any }> | null };
 
     if (!events) return;
     setActivity(events.slice(0, 10));

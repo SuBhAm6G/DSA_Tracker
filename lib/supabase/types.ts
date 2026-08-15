@@ -123,16 +123,17 @@ export interface ListWithModules extends CurriculumList {
 export interface Database {
   public: {
     Tables: {
-      profiles: { Row: Profile };
-      curriculum_lists: { Row: CurriculumList };
-      modules: { Row: Module };
-      topics: { Row: Topic };
-      subtopics: { Row: Subtopic };
-      user_topic_progress: { Row: UserTopicProgress };
-      topic_notes: { Row: TopicNote };
-      activity_events: { Row: ActivityEvent };
-      user_milestones: { Row: UserMilestone };
-      user_preferences: { Row: UserPreferences };
+      profiles: { Row: Profile; Insert: Partial<Profile>; Update: Partial<Profile> };
+      curriculum_lists: { Row: CurriculumList; Insert: Partial<CurriculumList>; Update: Partial<CurriculumList> };
+      modules: { Row: Module; Insert: Partial<Module>; Update: Partial<Module> };
+      topics: { Row: Topic; Insert: Partial<Topic>; Update: Partial<Topic> };
+      subtopics: { Row: Subtopic; Insert: Partial<Subtopic>; Update: Partial<Subtopic> };
+      user_topic_progress: { Row: UserTopicProgress; Insert: Partial<UserTopicProgress>; Update: Partial<UserTopicProgress> };
+      user_subtopic_progress: { Row: UserSubtopicProgress; Insert: Partial<UserSubtopicProgress>; Update: Partial<UserSubtopicProgress> };
+      topic_notes: { Row: TopicNote; Insert: Partial<TopicNote>; Update: Partial<TopicNote> };
+      activity_events: { Row: ActivityEvent; Insert: Partial<ActivityEvent>; Update: Partial<ActivityEvent> };
+      user_milestones: { Row: UserMilestone; Insert: Partial<UserMilestone>; Update: Partial<UserMilestone> };
+      user_preferences: { Row: UserPreferences; Insert: Partial<UserPreferences>; Update: Partial<UserPreferences> };
     };
   };
 }
