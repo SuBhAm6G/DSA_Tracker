@@ -26,13 +26,19 @@ export function useCurriculum() {
     if (!user) { setLoading(false); return; }
     setUserId(user.id);
 
-    const { data: profile } = await supabase.from('profiles').select('programming_language').eq('id', user.id).single();
+    const [
+      { data: profile },
+      { data: progressRows },
+      { data: subprogressRows },
+      { data: dbTopicsRaw }
+    ] = await Promise.all([
+      supabase.from('profiles').select('programming_language').eq('id', user.id).single(),
+      supabase.from('user_topic_progress').select('*').eq('user_id', user.id) as unknown as Promise<{ data: UserTopicProgress[] | null }>,
+      supabase.from('user_subtopic_progress').select('*').eq('user_id', user.id) as unknown as Promise<{ data: UserSubtopicProgress[] | null }>,
+      supabase.from('topics').select('id, slug') as unknown as Promise<{ data: Array<{ id: string; slug: string }> | null }>
+    ]);
+
     if (profile) setProgrammingLanguage(profile.programming_language);
-
-    const { data: progressRows } = await supabase.from('user_topic_progress').select('*').eq('user_id', user.id) as unknown as { data: UserTopicProgress[] | null };
-    const { data: subprogressRows } = await supabase.from('user_subtopic_progress').select('*').eq('user_id', user.id) as unknown as { data: UserSubtopicProgress[] | null };
-
-    const { data: dbTopicsRaw } = await supabase.from('topics').select('id, slug') as unknown as { data: Array<{ id: string; slug: string }> | null };
     const dbTopics = dbTopicsRaw ?? [];
     const slugToUUID = new Map<string, string>();
     const uuidToSlug = new Map<string, string>();
