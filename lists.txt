@@ -1,0 +1,3475 @@
+# LIST 1 — DSA FOR DATA ROLES
+
+**Target:** Data Analyst + Data Scientist / ML roles, excluding MAANG/high-end product-company DSA expectations.
+
+This is the **data-role-specific DSA track**. It is intentionally Python-first and focuses on the algorithms, data structures, and problem patterns that give the highest return for coding rounds attached to data roles.
+
+---
+
+# MODULE 0 — PYTHON FOR DSA
+
+## 0.1 Core Python syntax for problem solving
+
+* Variables and data types
+* Conditional statements
+* Loops
+* Functions
+* Return values
+* Multiple return values
+* Pass-by-object/reference behavior
+* Basic slicing
+* List/string indexing
+
+## 0.2 Python collections
+
+### `list`
+
+* Indexing
+* Slicing
+* `append`
+* `pop`
+* `insert`
+* `remove`
+* `extend`
+* `sort`
+* `reverse`
+* `count`
+* `index`
+
+### `tuple`
+
+* Packing/unpacking
+* Coordinate/value-pair representation
+* Tuple sorting
+
+### `dict`
+
+* Key-value storage
+* Insertion/update
+* Lookup
+* Deletion
+* `get`
+* `keys`
+* `values`
+* `items`
+* `setdefault`
+
+### `set`
+
+* Membership testing
+* Duplicate removal
+* Union
+* Intersection
+* Difference
+
+### `str`
+
+* Indexing
+* Slicing
+* Concatenation
+* Comparison
+* Character processing
+
+### `collections`
+
+* `Counter`
+* `defaultdict`
+* `deque`
+
+### `heapq`
+
+* Min heap
+* Priority queue
+* Top-K operations
+
+### `bisect`
+
+* Binary search
+* Insertion position
+* `bisect_left`
+* `bisect_right`
+
+---
+
+# MODULE 1 — COMPLEXITY & ALGORITHMIC THINKING
+
+## 1.1 Complexity analysis
+
+* Big-O
+* Big-Theta
+* Big-Omega
+* Time complexity
+* Space complexity
+* Best case
+* Average case
+* Worst case
+* Constant complexity
+* Linear complexity
+* Logarithmic complexity
+* Linearithmic complexity
+* Quadratic complexity
+
+## 1.2 Complexity of common operations
+
+Understand complexity of:
+
+* List access
+* List insertion/deletion
+* Dictionary lookup
+* Set lookup
+* Sorting
+* Heap operations
+* String operations
+
+## 1.3 Complexity recognition
+
+Problems where the teacher gives code and asks:
+
+* Determine time complexity
+* Determine space complexity
+* Identify unnecessary nested loops
+* Convert repeated searching into hashing
+* Convert repeated range calculations into prefix sums
+* Replace brute force with sorting
+* Replace O(N²) with O(N)
+* Recognize when O(N log N) is acceptable
+
+## 1.4 Brute force → optimization
+
+For every problem learn to identify:
+
+* Naive solution
+* Bottleneck
+* Repeated computation
+* Stored information
+* Better data structure
+* Optimized complexity
+
+This should become a standard problem-solving habit.
+
+---
+
+# MODULE 2 — BASIC MATHEMATICS FOR CODING
+
+## 2.1 Number manipulation
+
+* Count digits
+* Reverse number
+* Palindrome number
+* Digit sum
+* Digit product
+* Extract individual digits
+* Count occurrences of a digit
+* Number construction from digits
+* Even/odd
+* Positive/negative/zero
+
+## 2.2 Basic mathematical algorithms
+
+* Sum of first N numbers
+* Sum of squares
+* GCD
+* LCM
+* Euclidean algorithm
+* Factors/divisors
+* Prime checking
+* Generate primes
+* Basic Sieve of Eratosthenes
+
+## 2.3 Basic modular arithmetic
+
+* `%`
+* Divisibility
+* Modular addition
+* Modular subtraction
+* Avoiding overflow concept
+* Checking divisibility of a sum
+* Prefix modulo
+
+Advanced number theory is not part of this track.
+
+---
+
+# MODULE 3 — ARRAYS / LISTS
+
+## 3.1 Fundamental array problems
+
+* Traversal
+* Sum
+* Average
+* Minimum
+* Maximum
+* Second largest
+* Second smallest
+* Count occurrences
+* Frequency
+* Duplicate detection
+* Check whether sorted
+* Find missing element
+* Find repeating element
+* Remove duplicates
+* Move zeroes
+* Rearrange elements
+* Separate positive/negative
+* Separate even/odd
+* Separate zero/non-zero
+
+## 3.2 Array manipulation
+
+* Reverse array
+* Left rotation
+* Right rotation
+* Rotate by K
+* In-place modification
+* Insertion
+* Deletion
+* Merging arrays
+* Merging sorted arrays
+* Rearrangement based on conditions
+
+## 3.3 Subarrays
+
+* Generate subarrays conceptually
+* Count subarrays
+* Maximum/minimum subarray
+* Subarray with target property
+* Longest valid subarray
+* Shortest valid subarray
+
+---
+
+# MODULE 4 — TWO POINTERS
+
+## 4.1 Opposite-direction two pointers
+
+* Reverse array
+* Palindrome
+* Pair sum
+* Pair with target
+* Closest pair
+* Two-sum in sorted array
+* Remove elements from ends
+* Partitioning
+
+## 4.2 Same-direction two pointers
+
+* Remove duplicates
+* Compact an array
+* Merge sorted data
+* Slow/fast array traversal
+* In-place filtering
+* Partitioning problems
+
+## 4.3 Two pointers on strings
+
+* Palindrome
+* Valid palindrome
+* Compare strings from both ends
+* Remove/skip characters
+* Character matching
+
+## 4.4 Recognition
+
+Teach how to recognize:
+
+> Sorted data + pair relationship + one/two directional movement
+
+as a possible two-pointer problem.
+
+---
+
+# MODULE 5 — SLIDING WINDOW
+
+## 5.1 Fixed-size window
+
+* Maximum sum of K consecutive elements
+* Minimum sum of K consecutive elements
+* Average of K elements
+* Count properties inside windows
+* Frequency inside a fixed window
+
+## 5.2 Variable-size window
+
+* Longest subarray satisfying a condition
+* Shortest subarray satisfying a condition
+* Longest substring satisfying a condition
+* At-most-K problems
+* At-least-K-style transformations
+* Number of distinct elements within a window
+* Frequency-constrained windows
+
+## 5.3 String sliding window
+
+* Longest substring without repeating characters
+* Longest substring with K distinct characters
+* Character-frequency windows
+* Character replacement
+* Minimum-window concept
+
+## 5.4 Pattern recognition
+
+Learn when:
+
+* Data is contiguous
+* A left boundary and right boundary can move
+* The window can be expanded/shrunk
+* Recomputing the entire range would be wasteful
+
+---
+
+# MODULE 6 — PREFIX SUM & PREFIX-BASED TECHNIQUES
+
+## 6.1 One-dimensional prefix sum
+
+* Build prefix sum
+* Range sum queries
+* Sum of subarray
+* Fast repeated range queries
+
+## 6.2 Prefix sum + hashmap
+
+* Subarray Sum = K
+* Longest subarray with sum K
+* Count subarrays with target sum
+* Zero-sum subarrays
+* Equal 0/1 subarrays
+* Prefix-frequency problems
+
+## 6.3 Prefix minimum/maximum concepts
+
+* Running minimum
+* Running maximum
+* Prefix/suffix comparison
+* Best left/right contribution
+
+## 6.4 Two-dimensional prefix sum
+
+* Matrix range sum
+* Rectangle sum
+* Repeated 2D range queries
+
+## 6.5 Difference-style thinking
+
+* Range update concept
+* Difference array concept
+* Recovering values from differences
+
+---
+
+# MODULE 7 — KADANE & RUNNING-OPTIMUM PATTERNS
+
+## 7.1 Kadane's algorithm
+
+* Maximum subarray sum
+* Minimum subarray sum
+* Maximum subarray with indices
+* Tracking current vs global optimum
+* All-negative arrays
+
+## 7.2 Variations
+
+* Circular maximum subarray concept
+* Maximum/minimum running contribution
+* Best prefix/suffix contribution
+
+## 7.3 Pattern recognition
+
+Recognize:
+
+> "I need the best contiguous range and only need the effect of the previous position."
+
+---
+
+# MODULE 8 — HASHING / DICTIONARIES / SETS
+
+## 8.1 Frequency mapping
+
+* Character frequencies
+* Number frequencies
+* Word frequencies
+* Duplicate counting
+* Unique counts
+* Most frequent
+* Least frequent
+* Frequency comparison
+
+## 8.2 Hashmap lookup
+
+* Two Sum
+* Complement lookup
+* Duplicate detection
+* Membership testing
+* First occurrence
+* Last occurrence
+* Index tracking
+
+## 8.3 Set-based problems
+
+* Unique elements
+* Intersection
+* Union
+* Difference
+* Common elements
+* Duplicate removal
+
+## 8.4 Grouping
+
+* Group by key
+* Group equivalent values
+* Group anagrams
+* Build buckets
+* Map records to categories
+
+These problems should be taught with a strong emphasis on **data-like grouping and aggregation logic**.
+
+## 8.5 Prefix sum + hashing
+
+* Subarray Sum = K
+* Zero-sum
+* Longest target-sum subarray
+* Count target-sum subarrays
+
+---
+
+# MODULE 9 — STRINGS & TEXT PROCESSING
+
+## 9.1 Basic string manipulation
+
+* Character traversal
+* ASCII values
+* Lowercase/uppercase
+* Reverse string
+* Palindrome
+* String comparison
+* Concatenation
+* Substrings
+* Prefix/suffix
+* Character replacement
+* Character removal
+
+## 9.2 Word-level processing
+
+* Split words
+* Reverse words
+* Count words
+* Find longest/shortest word
+* Word frequency
+* Normalize text
+* Remove extra spaces
+* Reconstruct strings
+
+## 9.3 Frequency-based string problems
+
+* Valid anagram
+* First unique character
+* Duplicate characters
+* Most frequent character
+* Frequency comparison
+* Group anagrams
+
+## 9.4 String searching
+
+* Basic substring search
+* `find`
+* Prefix/suffix checks
+* Search for patterns using basic methods
+
+## 9.5 String sliding window
+
+* Longest substring without repetition
+* K distinct characters
+* Character frequency constraints
+* Replacement-based windows
+* Minimum-window concept
+
+## 9.6 String transformations
+
+* Run-length encoding
+* Basic string compression
+* Encode/decode simple strings
+* Count-and-say-style processing
+* License-key formatting
+* Position-based string transformations
+
+---
+
+# MODULE 10 — FREQUENCY ARRAYS & CHARACTER MAPPING
+
+## 10.1 ASCII/character indexing
+
+* Character → index
+* `ord()`
+* `chr()`
+* Lowercase alphabet indexing
+* Digit-character mapping
+
+## 10.2 Frequency arrays
+
+* `a-z` frequency
+* `0-9` frequency
+* Fixed-size character counting
+* Frequency comparison
+* Anagram checking
+* First unique character
+
+## 10.3 When to use frequency array vs dictionary
+
+Teach the tradeoff between:
+
+* Known small domain
+* Arbitrary keys
+* Memory
+* Lookup speed
+* Simplicity
+
+---
+
+# MODULE 11 — SORTING & ORDER-BASED PROBLEM SOLVING
+
+## 11.1 Sorting fundamentals
+
+Understand:
+
+* Bubble sort
+* Selection sort
+* Insertion sort
+* Merge sort concept
+* Quick sort concept
+* Divide and conquer
+* O(N log N)
+
+## 11.2 Python sorting
+
+Master:
+
+* `sorted()`
+* `.sort()`
+* `reverse=True`
+* `key=`
+* Lambda expressions
+* Tuple sorting
+* Multi-key sorting
+
+## 11.3 Sorting-based problem solving
+
+Learn to recognize when sorting converts a problem into:
+
+* Two pointers
+* Greedy
+* Grouping
+* Deduplication
+* Interval processing
+* Ranking
+* Nearest-value problems
+
+## 11.4 Custom comparators / sorting rules
+
+* Sort by one field
+* Sort by multiple fields
+* Ascending + descending combinations
+* Sort by frequency
+* Sort by alphabet
+* Sort by numeric value
+* Tuple/pair sorting
+
+---
+
+# MODULE 12 — BINARY SEARCH & ORDERED SEARCH
+
+## 12.1 Standard binary search
+
+* Search sorted array
+* Iterative binary search
+* Recursive concept
+* Search target
+* First occurrence
+* Last occurrence
+
+## 12.2 Bound-based searching
+
+* Lower bound
+* Upper bound
+* Number of occurrences
+* Insertion position
+* Range of a value
+
+## 12.3 Python implementation
+
+* `bisect_left`
+* `bisect_right`
+* Maintaining sorted data concept
+
+## 12.4 Rotated sorted arrays
+
+* Search target
+* Find minimum
+* Identify sorted half
+* Rotation-point concept
+
+## 12.5 Binary search on answer
+
+Learn the basic idea:
+
+* Define possible answer range
+* Define feasibility
+* Check monotonicity
+* Search minimum feasible answer
+* Search maximum feasible answer
+
+Representative problem types:
+
+* Minimum capacity
+* Minimum speed
+* Allocation
+* Partitioning
+* Minimize maximum workload
+
+This is useful, but it does not need the full advanced OA treatment.
+
+---
+
+# MODULE 13 — MATRICES / 2D ARRAYS
+
+## 13.1 Basic matrix traversal
+
+* Row-wise
+* Column-wise
+* Boundary traversal
+* Diagonal traversal
+* Main/secondary diagonal
+
+## 13.2 Matrix transformations
+
+* Transpose
+* Rotate 90°
+* Rotate 180°
+* Rotate 270°
+* Reverse rows/columns
+
+## 13.3 Spiral traversal
+
+* Spiral order
+* Layer-by-layer traversal
+
+## 13.4 Matrix search
+
+* Search in matrix
+* Search in sorted matrix
+* Row/column search
+
+## 13.5 Matrix modification
+
+* Set matrix zeroes
+* Replace/mark cells
+* In-place matrix modification
+
+## 13.6 Direction vectors
+
+* Up
+* Down
+* Left
+* Right
+* Optional diagonals
+* Boundary checking
+* Coordinate movement
+
+## 13.7 Coordinate transformations
+
+* `(row, column)` representation
+* Flattening 2D position concept
+* `index = row * cols + col`
+* Recovering row/column
+* Grid-based movement
+
+These are useful because they also appear in image/data-grid-style processing.
+
+---
+
+# MODULE 14 — STACK & QUEUE FUNDAMENTALS
+
+## 14.1 Stack
+
+* LIFO
+* Push
+* Pop
+* Top
+* Empty
+* Balanced parentheses
+* Valid brackets
+* Nested structure processing
+
+## 14.2 Queue
+
+* FIFO
+* Enqueue
+* Dequeue
+* Front
+* Basic queue processing
+
+## 14.3 Deque
+
+* Add/remove from both ends
+* Sliding-window applications
+* Queue optimization
+
+## 14.4 Simple stack/queue problem patterns
+
+* Parentheses
+* Nested expressions
+* Sequential processing
+* Undo-like behavior
+* Maintaining recently processed elements
+
+Advanced monotonic stack/queue techniques are outside this list.
+
+---
+
+# MODULE 15 — HEAP & PRIORITY QUEUE
+
+## 15.1 Heap fundamentals
+
+* Min heap
+* Max heap concept
+* Priority queue
+* Insert
+* Remove minimum/maximum
+* Heap complexity
+
+## 15.2 Python `heapq`
+
+* Push
+* Pop
+* Peek
+* Heapify
+* Negating values for max-heap behavior
+
+## 15.3 Top-K patterns
+
+* K largest
+* K smallest
+* Top K frequent
+* K closest
+* Maintain K best elements
+
+## 15.4 Priority-based data processing
+
+* Repeatedly selecting minimum
+* Repeatedly selecting maximum
+* Scheduling by priority
+* Maintaining best K observations
+
+---
+
+# MODULE 16 — GREEDY & INTERVAL PROBLEMS
+
+## 16.1 Greedy thinking
+
+* Local vs global choice
+* Sorting before greedy selection
+* Proving/understanding why a greedy choice works
+* Selecting earliest/largest/smallest contribution
+
+## 16.2 Interval problems
+
+* Merge intervals
+* Insert interval
+* Non-overlapping intervals
+* Activity selection
+* Interval scheduling
+* Meeting Rooms I
+* Basic Meeting Rooms II concept
+
+## 16.3 Resource allocation
+
+* Assigning resources
+* Matching items
+* Capacity problems
+* Scheduling
+* Minimum required resources
+
+## 16.4 Other basic greedy patterns
+
+* Fractional knapsack
+* Job sequencing concept
+* Minimum platforms
+* Simple jump-game-style problems
+
+---
+
+# MODULE 17 — RECURSION FUNDAMENTALS
+
+## 17.1 Recursion concepts
+
+* Base case
+* Recursive case
+* Call stack
+* State
+* Recursive decomposition
+* Recursion tree
+* Multiple recursive calls
+
+## 17.2 Basic recursive problems
+
+* Factorial
+* Fibonacci
+* Sum of N
+* Reverse string
+* Reverse array
+* Power
+* Digit processing
+* Simple divide-and-conquer problems
+
+## 17.3 Recursion → iteration thinking
+
+Understand:
+
+* When recursion is useful
+* When iteration is simpler
+* Stack-overflow concept
+* Replacing simple recursion with loops
+
+Advanced backtracking is not part of this list.
+
+---
+
+# MODULE 18 — BASIC DYNAMIC PROGRAMMING
+
+## 18.1 DP fundamentals
+
+* Overlapping subproblems
+* Optimal substructure
+* State
+* Transition
+* Base cases
+* Memoization
+* Tabulation
+
+## 18.2 Simple 1D DP
+
+* Fibonacci
+* Climbing stairs
+* Min-cost climbing stairs
+* House robber
+* Maximum sum of non-adjacent elements
+* Simple minimum/maximum optimization
+
+## 18.3 DP recognition
+
+Recognize:
+
+> "The same smaller state is being solved repeatedly."
+
+and:
+
+> "The answer can be constructed from answers to previous states."
+
+Advanced DP families are not part of this list.
+
+---
+
+# MODULE 19 — DATA-ORIENTED PROBLEM-SOLVING PATTERNS
+
+This module is specifically added to make the DSA useful for **Data Analyst/Data Scientist coding rounds**, rather than teaching DSA as purely an SDE curriculum.
+
+## 19.1 Frequency / aggregation pattern
+
+Problems involving:
+
+* Count
+* Group
+* Aggregate
+* Most common
+* Least common
+* Unique
+* Duplicate
+* Rank by frequency
+
+## 19.2 Record processing
+
+Problems involving collections of:
+
+* IDs
+* timestamps
+* categories
+* values
+* events
+* transactions
+* observations
+
+Typical operations:
+
+* Grouping
+* Filtering
+* Sorting
+* Deduplicating
+* Counting
+* Finding extremes
+
+## 19.3 Time-series-style algorithmic problems
+
+Without turning this into statistics, practice:
+
+* Consecutive days
+* Rolling windows
+* Maximum/minimum period
+* Longest streak
+* Fixed-size windows
+* Event counts over windows
+* Prefix-based cumulative quantities
+
+## 19.4 Ranking problems
+
+* Top K
+* Bottom K
+* Ties
+* Frequency ranking
+* Sort by multiple criteria
+* Rank while maintaining original order
+
+## 19.5 Duplicate and consistency problems
+
+* Duplicate records
+* Repeated IDs
+* Conflicting records
+* Missing values represented by special markers
+* Unique records
+* Intersection between datasets
+
+---
+
+# MODULE 20 — CORE OA PATTERN RECOGNITION
+
+The AI teacher should teach these as **patterns**, not isolated algorithms.
+
+## 20.1 Hashmap pattern
+
+Recognize:
+
+* Frequency
+* Complement lookup
+* Duplicate detection
+* Grouping
+* Counting
+
+## 20.2 Set pattern
+
+Recognize:
+
+* Membership
+* Uniqueness
+* Intersection
+* Duplicate removal
+
+## 20.3 Two-pointer pattern
+
+Recognize:
+
+* Sorted data
+* Pair relationship
+* Left/right movement
+* In-place filtering
+
+## 20.4 Sliding-window pattern
+
+Recognize:
+
+* Contiguous data
+* Fixed/variable window
+* Longest/shortest range
+* Frequency constraints
+
+## 20.5 Prefix-sum pattern
+
+Recognize:
+
+* Repeated range sums
+* Subarray sums
+* Cumulative information
+* Prefix + hashmap
+
+## 20.6 Sorting pattern
+
+Recognize:
+
+> "If I order the data first, does the problem become simpler?"
+
+## 20.7 Binary-search pattern
+
+Recognize:
+
+* Sorted search
+* Search over monotonic answer
+* Minimum feasible
+* Maximum feasible
+
+## 20.8 Heap pattern
+
+Recognize:
+
+* Top K
+* Repeated min/max selection
+* Priority-based processing
+
+## 20.9 Greedy pattern
+
+Recognize:
+
+* Best local choice
+* Scheduling
+* Matching
+* Intervals
+* Resource allocation
+
+## 20.10 Running-optimum pattern
+
+Recognize:
+
+* Current best
+* Global best
+* Kadane-style optimization
+* Prefix/suffix contribution
+
+---
+
+# MODULE 21 — PROBLEM-SOLVING METHOD
+
+For every significant problem, practice:
+
+## Step 1 — Understand
+
+* Inputs
+* Outputs
+* Constraints
+* Edge cases
+
+## Step 2 — Brute force
+
+* Direct solution
+* Complexity
+
+## Step 3 — Identify bottleneck
+
+* Repeated computation
+* Repeated search
+* Repeated range calculation
+* Unnecessary sorting
+* Nested loops
+
+## Step 4 — Choose technique
+
+Potential choices:
+
+* Hashmap
+* Set
+* Sorting
+* Two pointers
+* Sliding window
+* Prefix sum
+* Binary search
+* Heap
+* Stack
+* Greedy
+* DP
+
+## Step 5 — Optimize
+
+Compare:
+
+* Time
+* Space
+* Simplicity
+
+## Step 6 — Implement in Python
+
+Focus on:
+
+* Clean code
+* Correct use of built-ins
+* Readability
+* Avoiding unnecessary complexity
+
+## Step 7 — Test edge cases
+
+* Empty input
+* One element
+* Duplicates
+* All equal
+* Negative numbers
+* Zero
+* Already sorted
+* Reverse sorted
+* Very large values
+* Boundary conditions
+
+---
+
+# MODULE 22 — TIMED CODING / OA PRACTICE
+
+## 22.1 Short tests
+
+* 20–30 minute sets
+* 1–2 problems
+* Rapid pattern recognition
+* Basic implementation speed
+
+## 22.2 Medium tests
+
+* 45–60 minutes
+* 2 problems
+* Easy + Medium combination
+* One unfamiliar problem
+
+## 22.3 Full coding tests
+
+* 60–90 minutes
+* Multiple problems
+* Mixed topics
+* No topic labels
+* Time management
+
+## 22.4 Mixed-pattern practice
+
+Problems should deliberately combine:
+
+* Hashing + prefix sum
+* Sorting + two pointers
+* Sliding window + frequency map
+* Sorting + greedy
+* Heap + frequency
+* Binary search + feasibility
+* Matrix + direction vectors
+
+## 22.5 OA simulation
+
+Eventually practice without being told:
+
+> "Use sliding window."
+
+Instead, the question should simply appear and you must determine the technique.
+
+---
+
+# MODULE 23 — LOW-PRIORITY EXTRAS WITHIN THE DATA TRACK
+
+These are still useful enough to know, but should come **after the main modules**.
+
+* Boyer-Moore Majority Vote
+* Basic inversion-count concept
+* Merge-sort-based counting concept
+* Run-length encoding
+* Basic bucket/counting-sort concept
+* Jagged-array concept
+* Flattening nested lists
+* Basic coordinate-index transformations
+* Basic palindrome optimization
+* Basic string encoding/decoding
+* Basic modular-prefix tricks
+
+---
+
+# FINAL ORDER — LIST 1
+
+```text
+01. Python for DSA
+        ↓
+02. Complexity & Algorithmic Thinking
+        ↓
+03. Basic Mathematics
+        ↓
+04. Arrays / Lists
+        ↓
+05. Two Pointers
+        ↓
+06. Sliding Window
+        ↓
+07. Prefix Sum & Prefix Techniques
+        ↓
+08. Kadane & Running Optimum
+        ↓
+09. Hashing / Dict / Set
+        ↓
+10. Strings & Text Processing
+        ↓
+11. Frequency Arrays & Character Mapping
+        ↓
+12. Sorting & Order-Based Problems
+        ↓
+13. Binary Search
+        ↓
+14. Matrices / 2D Arrays
+        ↓
+15. Stack & Queue Fundamentals
+        ↓
+16. Heap & Priority Queue
+        ↓
+17. Greedy & Intervals
+        ↓
+18. Recursion Fundamentals
+        ↓
+19. Basic Dynamic Programming
+        ↓
+20. Data-Oriented Problem-Solving Patterns
+        ↓
+21. Core OA Pattern Recognition
+        ↓
+22. Problem-Solving Method
+        ↓
+23. Timed Coding / OA Practice
+        ↓
+24. Low-Priority Extras
+```
+
+This is **List 1 only**. I have deliberately **not brought in the TCS/Infosys-only additions or MAANG/high-profile-product additions yet**; those belong in Lists 2 and 3 and will be excluded from this list so the three lists remain mutually exclusive.
+
+
+# LIST 2 — DSA FOR TCS, INFOSYS & TYPICAL INDIAN ON-CAMPUS OAs
+
+**Scope:** Only topics **not already present in List 1** and useful for TCS, Infosys, and comparable Indian campus/service-company coding rounds.
+
+I’m deliberately making this a **cumulative second layer**: a candidate who finishes List 1 and then List 2 should have a much broader placement-OA toolkit without yet entering the MAANG/product-company layer.
+
+Recent 2026 TCS reports continue to show arrays/strings as dominant, while math, stack/queue, recursion/backtracking, greedy/two-pointer and DP remain relevant; Infosys SP/DSE has been noticeably more demanding, with DP, linked lists, trees and graphs appearing regularly. ([PapersAdda][1]) A recent July 2026 TCS report, for example, described one coding problem as sorting-based and another as a harder array/sequence problem that timed out under an inefficient approach. ([Reddit][2])
+
+---
+
+# MODULE 1 — LINKED LISTS
+
+## 1.1 Linked-list fundamentals
+
+* Node structure
+* Head
+* Tail
+* Traversal
+* Length
+* Search
+* Insertion at beginning
+* Insertion at end
+* Insertion at arbitrary position
+* Deletion at beginning
+* Deletion at end
+* Deletion by value
+* Deletion by position
+
+## 1.2 Singly linked list
+
+* Basic construction
+* Traversal
+* Modification
+* Reversal
+* Searching
+* Merging
+
+## 1.3 Doubly linked list
+
+* Previous/next pointers
+* Forward traversal
+* Backward traversal
+* Insertion
+* Deletion
+
+## 1.4 Circular linked list
+
+* Circular traversal
+* Insertion
+* Deletion
+* Detecting the end condition
+
+## 1.5 Fast/slow pointer
+
+* Find middle
+* Detect cycle
+* Find cycle entry
+* Remove cycle
+* Split linked list
+* Check palindrome using linked-list structure
+
+## 1.6 Linked-list reversal patterns
+
+* Iterative reversal
+* Recursive reversal
+* Reverse first K nodes
+* Reverse sublist
+* Reverse in groups concept
+
+## 1.7 Merge patterns
+
+* Merge two sorted lists
+* Dummy-head technique
+* Merge multiple lists concept
+* Sorted linked-list construction
+
+## 1.8 Common OA problems
+
+* Remove Nth node
+* Intersection of two linked lists
+* Remove duplicates
+* Add numbers represented by linked lists
+* Reorder list concept
+* Palindrome linked list
+
+The original syllabus explicitly places traversal, deletion/insertion, tortoise-and-hare, reversal and dummy-node techniques in the placement/advanced progression. 
+
+---
+
+# MODULE 2 — ADVANCED STACK PATTERNS
+
+## 2.1 Monotonic stack
+
+* Increasing stack
+* Decreasing stack
+* When monotonicity is useful
+* Nearest greater/smaller element
+
+## 2.2 Next/previous element patterns
+
+* Next Greater Element
+* Next Greater Element II / circular array
+* Next Smaller Element
+* Previous Greater Element
+* Previous Smaller Element
+* Nearest greater element
+* Nearest smaller element
+
+## 2.3 Frequency-aware variants
+
+* Next greater frequency element
+* Compare frequency before value
+* Monotonic stack + hashmap
+
+## 2.4 Classic applications
+
+* Stock span
+* Daily temperatures
+* Largest rectangle in histogram
+* Maximum area in histogram
+* Trapping Rain Water concept
+
+## 2.5 Stack-based expression processing
+
+* Infix/postfix/prefix basics
+* Evaluate postfix
+* Reverse Polish Notation
+* Basic calculator-style problems
+* Operator precedence concept
+* Parentheses nesting
+
+The uploaded MAANG source distinguishes monotonic-stack problems such as NGE, histogram and daily temperatures from basic stack usage; those are therefore appropriate for this middle layer rather than List 1. 
+
+---
+
+# MODULE 3 — ADVANCED QUEUE / DEQUE PATTERNS
+
+## 3.1 Monotonic deque
+
+* Increasing deque
+* Decreasing deque
+* Maintain maximum
+* Maintain minimum
+
+## 3.2 Sliding-window optimization
+
+* Sliding Window Maximum
+* Sliding Window Minimum
+* Maintaining candidate indices
+* Removing expired indices
+* Why deque can beat heap
+
+## 3.3 Queue-based optimization
+
+* Queue as state tracker
+* BFS-style queue thinking
+* Maintaining ordered candidates
+
+## 3.4 Shortest-subarray-style problems
+
+* Recognize when prefix sums + deque are useful
+* Basic shortest subarray with sum ≥ K concept
+
+This extends the basic deque knowledge already in List 1 rather than repeating it.
+
+---
+
+# MODULE 4 — ADVANCED MATRIX / GRID PROBLEMS
+
+List 1 covers matrix traversal, transformations, spiral traversal, search and direction vectors. This module adds the **state/search problems on grids**.
+
+## 4.1 Flood-fill pattern
+
+* Flood fill
+* Connected cells
+* Visited tracking
+* Recursive DFS
+* Iterative BFS
+
+## 4.2 Island problems
+
+* Number of Islands
+* Maximum Island Area
+* Island Perimeter
+* Number of Enclaves
+* Surrounded Regions concept
+
+## 4.3 Grid traversal with state
+
+* Multi-source BFS
+* Grid distance
+* Nearest source
+* Minimum number of steps
+* Obstacles
+* Reachability
+
+## 4.4 Classic grid-OA patterns
+
+* Rotting Oranges
+* Walls and Gates
+* Shortest path in a binary matrix
+* Counting connected regions
+* Boundary-connected components
+
+The uploaded MAANG material specifically groups number-of-islands and related flood-fill variants as a separate problem family. 
+
+---
+
+# MODULE 5 — TREES
+
+## 5.1 Binary-tree fundamentals
+
+* Root
+* Leaf
+* Parent
+* Child
+* Subtree
+* Depth
+* Height
+* Balanced vs unbalanced
+* Binary-tree representation
+
+## 5.2 Tree traversal
+
+* Preorder
+* Inorder
+* Postorder
+* Recursive traversal
+* Iterative traversal
+* Level-order traversal
+
+## 5.3 Basic tree problems
+
+* Maximum depth
+* Minimum depth
+* Count nodes
+* Sum of nodes
+* Count leaves
+* Search
+* Identical trees
+* Symmetric trees
+* Invert tree
+
+## 5.4 Tree path problems
+
+* Root-to-leaf paths
+* Path sum
+* All root-to-leaf paths
+* Maximum path-related value
+* Minimum path-related value
+
+## 5.5 Tree properties
+
+* Height
+* Diameter
+* Balanced tree
+* Subtree checking
+
+## 5.6 Tree views
+
+* Left view
+* Right view
+* Top view
+* Bottom view
+
+## 5.7 Lowest Common Ancestor
+
+* LCA in binary tree
+* LCA in BST
+* Parent-pointer variant concept
+
+## 5.8 Binary Search Tree
+
+* Search
+* Insert
+* Delete concept
+* Minimum
+* Maximum
+* Predecessor
+* Successor
+* Validate BST
+* Kth smallest
+* Kth largest
+* Range queries
+
+## 5.9 Tree construction
+
+* Inorder + preorder
+* Inorder + postorder
+* Basic reconstruction
+
+## 5.10 Tree problem recognition
+
+* Top-down DFS
+* Bottom-up/postorder reasoning
+* Information from children
+* Information inherited from ancestors
+
+The original progression puts tree traversal, views, diameter, LCA and construction in the advanced placement section. 
+
+---
+
+# MODULE 6 — GRAPH FUNDAMENTALS
+
+## 6.1 Graph representation
+
+* Vertex
+* Edge
+* Directed graph
+* Undirected graph
+* Weighted graph
+* Unweighted graph
+* Adjacency matrix
+* Adjacency list
+* Edge list
+* Degree
+
+## 6.2 BFS
+
+* Basic traversal
+* Connected components
+* Shortest path in unweighted graphs
+* Level-based processing
+* Distance from source
+* Multi-source BFS
+
+## 6.3 DFS
+
+* Recursive DFS
+* Iterative DFS
+* Visited arrays/sets
+* Connected components
+* Reachability
+* Path existence
+
+## 6.4 Grid-as-graph
+
+* Number of islands
+* Flood fill
+* Matrix connectivity
+* Grid BFS
+* Grid DFS
+
+## 6.5 Cycle detection
+
+### Undirected graph
+
+* DFS cycle detection
+* BFS cycle detection
+
+### Directed graph
+
+* DFS recursion-stack method
+* Visited/active-state method
+
+## 6.6 Graph problems
+
+* Number of provinces
+* Connected components
+* Path existence
+* Reachability
+* Components after removing edges concept
+
+The original syllabus explicitly includes adjacency representations, BFS/DFS, connected components and cycle detection before progressing into more advanced graph algorithms. 
+
+---
+
+# MODULE 7 — TOPOLOGICAL SORT & DEPENDENCY PROBLEMS
+
+## 7.1 DAG fundamentals
+
+* Directed Acyclic Graph
+* Dependency relationship
+* Indegree
+* Outdegree
+
+## 7.2 Kahn's algorithm
+
+* Indegree array
+* Queue processing
+* Topological ordering
+* Cycle detection through incomplete ordering
+
+## 7.3 DFS-based topological sort
+
+* Recursive ordering
+* Completion-time idea
+* Recursion stack
+
+## 7.4 Typical problems
+
+* Course Schedule
+* Course Schedule II
+* Task dependencies
+* Build-order problems
+* Prerequisite checking
+* Dependency resolution
+
+## 7.5 Advanced-but-still-placement-level application
+
+* Alien Dictionary concept
+* Lexicographically constrained dependency ordering
+
+The uploaded advanced source identifies Kahn's and DFS approaches and course-schedule-style questions as the standard topological-sort patterns. 
+
+---
+
+# MODULE 8 — SHORTEST PATH FUNDAMENTALS
+
+## 8.1 Unweighted shortest path
+
+* BFS shortest path
+* Distance array
+* Parent/path reconstruction
+* Grid shortest path
+
+## 8.2 Dijkstra
+
+* Weighted graph
+* Non-negative edge weights
+* Priority queue
+* Relaxation
+* Distance array
+* Stale heap entries
+* Shortest distance
+* Path reconstruction
+
+## 8.3 Basic applications
+
+* Minimum travel cost
+* Minimum weighted distance
+* Network delay-style problems
+* Cheapest route under ordinary non-negative weights
+
+## 8.4 Bellman-Ford
+
+Learn conceptually and implement once if targeting harder TCS/Infosys-style coding.
+
+* Relaxation
+* Negative edges
+* Negative cycle detection
+
+Do not grind it extensively.
+
+---
+
+# MODULE 9 — DYNAMIC PROGRAMMING: PLACEMENT LEVEL
+
+List 1 contains only basic 1D DP. This module covers the **additional DP families that can realistically appear in stronger TCS/Infosys rounds**.
+
+Recent Infosys SP/DSE candidate reports have included constrained-string DP and K-segment partition problems, so completely omitting DP beyond Fibonacci/House Robber would leave a significant gap for that target. ([Reddit][3])
+
+## 9.1 2D / Grid DP
+
+* Unique Paths
+* Unique Paths with obstacles
+* Minimum Path Sum
+* Maximum Path Sum
+* Grid cost optimization
+* Basic space optimization from 2D → 1D
+
+## 9.2 Knapsack
+
+* 0/1 Knapsack
+* Include/exclude pattern
+* Capacity-based DP
+* Maximum value
+
+## 9.3 Subset / partition DP
+
+* Subset Sum
+* Partition Equal Subset Sum
+* Target Sum concept
+* Count subsets satisfying condition
+
+## 9.4 Unbounded knapsack
+
+* Coin Change
+* Minimum coins
+* Number of ways
+* Reuse allowed vs one-time use
+
+## 9.5 Subsequence DP
+
+* Longest Increasing Subsequence
+* Standard O(N²) LIS
+* Increasing/non-increasing variants
+* Longest common subsequence
+
+## 9.6 String DP
+
+* Longest Common Subsequence
+* Basic edit-distance concept
+* Longest common substring concept
+* Palindromic subsequence concept
+
+## 9.7 State-based DP
+
+* DP with multiple states
+* Previous-state dependency
+* Small-state sequence problems
+* Count valid strings under restrictions
+
+## 9.8 Partition DP at placement level
+
+* Split array/string into K parts
+* Minimize/maximize segment cost
+* Contiguous segmentation
+* State based on number of segments
+
+---
+
+# MODULE 10 — BACKTRACKING & SEARCH
+
+## 10.1 Backtracking fundamentals
+
+* Choice
+* Explore
+* Undo
+* State management
+* Recursive search tree
+* Pruning basic
+
+## 10.2 Subsets
+
+* Power set
+* Pick/not-pick
+* Subsequences
+* Duplicate handling
+
+## 10.3 Permutations
+
+* All permutations
+* Swap-based generation
+* Used-array method
+* Duplicate permutations
+
+## 10.4 Combinations
+
+* Generate combinations
+* Combination Sum
+* Target-based selection
+* Fixed-size selections
+
+## 10.5 Basic constraint-search problems
+
+* Rat in a Maze
+* Simple word-search-style problems
+* Generate valid parentheses
+* Basic N-Queens understanding
+
+## 10.6 What to emphasize
+
+* Correct recursive state
+* Backtracking tree
+* Avoiding unnecessary branches
+* Basic pruning
+
+This is **placement-oriented backtracking**, not the full MAANG backtracking layer.
+
+---
+
+# MODULE 11 — BIT MANIPULATION
+
+## 11.1 Binary representation
+
+* Decimal → binary
+* Binary → decimal
+* Bit positions
+
+## 11.2 Core operations
+
+* AND
+* OR
+* XOR
+* NOT
+* Left shift
+* Right shift
+
+## 11.3 Essential patterns
+
+* Odd/even using bits
+* Power of two
+* Single Number
+* Missing Number
+* XOR cancellation
+* Count set bits
+* Check whether bit is set
+* Set a bit
+* Clear a bit
+* Toggle a bit
+
+## 11.4 Bit tricks
+
+* `n & (n - 1)`
+* Lowest set bit
+* Brian Kernighan's algorithm
+* XOR of range
+
+## 11.5 Basic bitmasking
+
+* Generate subsets using bits
+* Represent a small state set
+* Check selected/unselected items
+
+The uploaded materials explicitly add Single Number I/II/III, bit tests, `n & (n-1)`, set-bit counting and subset generation by masks. 
+
+---
+
+# MODULE 12 — DISJOINT SET UNION
+
+## 12.1 DSU fundamentals
+
+* Parent array
+* Find
+* Union
+* Connected components
+
+## 12.2 Optimization
+
+* Path compression
+* Union by rank
+* Union by size
+
+## 12.3 Placement-level applications
+
+* Cycle detection
+* Connected components
+* Redundant connection
+* Network connectivity
+* Accounts Merge concept
+* Number of operations to connect network
+
+Do not yet enter sophisticated DSU variants; those belong to List 3.
+
+---
+
+# MODULE 13 — ADVANCED ARRAY PATTERNS
+
+## 13.1 Majority-element pattern
+
+* Boyer-Moore Voting
+* Majority Element
+* Candidate/counter logic
+
+## 13.2 Inversion counting
+
+* Definition of inversion
+* Brute force O(N²)
+* Merge-sort optimization
+* Count smaller elements concept
+
+## 13.3 Prefix/suffix contribution
+
+* Left contribution
+* Right contribution
+* Prefix + suffix optimization
+* Product-except-self style thinking
+
+## 13.4 In-place array techniques
+
+* Constant-space rearrangement
+* Index-as-hash concept
+* Marking positions
+* Cyclic placement basics
+
+## 13.5 Array partitioning
+
+* Three-way partition
+* Pivot-based partition
+* Stable/unstable rearrangement
+
+---
+
+# MODULE 14 — ADVANCED STRING TECHNIQUES FOR PLACEMENT
+
+## 14.1 String hashing
+
+* Basic rolling hash idea
+* Hash-based equality
+* Hash collision concept
+* Comparing substrings conceptually
+
+## 14.2 Rabin-Karp
+
+* Rolling hash
+* Pattern matching
+* Hash update
+
+## 14.3 Palindrome techniques
+
+* Expand around center
+* Longest palindromic substring
+* Palindrome optimization
+
+## 14.4 String-pattern variants
+
+* Rotation checks
+* Repeated-pattern detection
+* Pattern equivalence
+* Character mapping
+
+Do not move into KMP/Z/suffix structures here; those are reserved for List 3.
+
+---
+
+# MODULE 15 — ADVANCED SORTING / SEARCHING EXTENSIONS
+
+## 15.1 Counting sort
+
+* When value range is small
+* Frequency-based sorting
+* O(N + range)
+
+## 15.2 Bucket sort
+
+* Bucket creation
+* Distribution
+* Sorting within buckets
+* Range-based use cases
+
+## 15.3 Radix sort
+
+* Digit-wise sorting
+* Stable counting-sort passes
+* Where radix sort is useful
+
+Understand the technique; don't over-practice it.
+
+## 15.4 Merge-sort counting
+
+* Inversion count
+* Count smaller after self concept
+* Modified merge procedure
+
+## 15.5 More binary-search applications
+
+* Search over feasible answer
+* Allocation
+* Partition
+* Capacity
+* Scheduling
+
+---
+
+# MODULE 16 — ITERATION VS RECURSION & IMPLEMENTATION OPTIMIZATION
+
+## 16.1 Converting recursion to iteration
+
+* Explicit stack
+* Loop-based state management
+* Why recursion may overflow
+* When iterative solutions are simpler
+
+## 16.2 Space optimization
+
+* Avoid unnecessary copies
+* In-place modification
+* Reusing arrays
+* Iterative alternatives
+
+## 16.3 OA-oriented implementation
+
+* Reduce code complexity
+* Avoid recursion where unnecessary
+* Use appropriate built-ins
+* Optimize input/output when required
+* Avoid TLE from repeated work
+
+This is particularly relevant because current TCS OAs can leave very little time per problem, and candidate reports include failures caused by TLE rather than incorrect logic. ([Reddit][2])
+
+---
+
+# MODULE 17 — ADVANCED MATHEMATICS FOR PLACEMENT CODING
+
+## 17.1 Number theory extension
+
+* Prime factorization
+* Sieve up to large limits
+* Smallest prime factor
+* Divisor counting
+* Divisor sums
+
+## 17.2 Modular arithmetic
+
+* Modular multiplication
+* Modular powers
+* Modular inverse concept
+* Large-result modulo
+
+## 17.3 Basic combinatorics
+
+* Permutations/combinations concept
+* `nCr`
+* Pascal triangle
+* Counting arrangements
+* Modular combinations at a basic level
+
+## 17.4 GCD-based patterns
+
+* GCD across array
+* Pairwise GCD
+* GCD after removals
+* LCM/GCD relationships
+
+The additional uploaded syllabus specifically adds `nCr % m` and larger-scale sieve work as OA extensions. 
+
+---
+
+# MODULE 18 — COMPANY/OA-SPECIFIC PROBLEM FORMATS
+
+## 18.1 Story-based coding
+
+Learn to strip a narrative down to:
+
+* Input
+* Transformation
+* Constraints
+* Output
+
+TCS-style coding frequently wraps straightforward array/string/math logic in a story. ([Campus Monk][4])
+
+## 18.2 Constraint interpretation
+
+Given:
+
+* Small N
+* Large N
+* Huge values
+* Many test cases
+* Multiple queries
+
+Determine whether to use:
+
+* Brute force
+* O(N)
+* O(N log N)
+* Prefix sums
+* Hashing
+* Binary search
+* DP
+
+## 18.3 Partial-score strategy
+
+Understand:
+
+* Get a correct brute-force solution first
+* Handle visible/simple cases
+* Then optimize
+* Avoid spending the entire OA chasing a perfect solution
+
+This matters because recent TCS/Infosys reports describe partial test-case scoring. ([PapersAdda][1])
+
+## 18.4 Mixed-topic questions
+
+Practice questions combining:
+
+* Arrays + hashing
+* Arrays + sorting
+* Arrays + DP
+* Strings + hashing
+* Strings + recursion
+* Matrix + BFS
+* DP + strings
+* Greedy + heap
+
+---
+
+# MODULE 19 — TIMED TCS / INFOSYS-STYLE PRACTICE
+
+## 19.1 TCS-style practice
+
+Practice:
+
+* Story-based array problems
+* Story-based string problems
+* Number manipulation
+* Sorting
+* Selection-sort-style implementation
+* Recursion
+* Greedy
+* Two-pointer
+* Stack/queue
+* DP
+
+Recent 2026 TCS reporting places arrays/strings at the center, with math, stack/queue, recursion, greedy/two-pointer and DP forming the remaining recurring categories. ([PapersAdda][1])
+
+## 19.2 Infosys-style practice
+
+Practice mixed Medium/Medium-Hard sets containing:
+
+* Arrays
+* Strings
+* DP
+* Linked lists
+* Trees
+* Graphs
+* Recursion
+* Hashing
+* Sorting
+* Optimization problems
+
+Current candidate reports show Infosys rounds can go materially beyond straightforward array questions, including constrained-string DP, K-partition problems, graph/DSU-style problems and harder array optimizations. ([Reddit][3])
+
+## 19.3 Typical campus OA simulations
+
+* 1 Easy + 1 Medium
+* 2 Medium
+* 1 Medium + 1 Medium-Hard
+* Multiple-choice DSA + coding
+* Hidden-test-case environments
+* Partial-score environments
+* Strict execution-time limits
+
+---
+
+# MODULE 20 — SECOND-LAYER OA PATTERN RECOGNITION
+
+After List 1, you should now learn to recognize the **next level of disguises**.
+
+## 20.1 Linked-list disguise
+
+Problem sounds like:
+
+> "Process a sequence of nodes while maintaining previous/next relationships."
+
+Think linked list.
+
+## 20.2 Monotonic-stack disguise
+
+Problem asks for:
+
+* nearest greater
+* nearest smaller
+* first future larger value
+* range until a larger/smaller value
+
+Think monotonic stack.
+
+## 20.3 Tree-recursion disguise
+
+Problem asks:
+
+> "Combine information from left and right children."
+
+Think postorder tree DP.
+
+## 20.4 Graph disguise
+
+Problem describes:
+
+* Locations + connections
+* People + relationships
+* Cities + roads
+* Dependencies
+* Reachability
+
+Think graph.
+
+## 20.5 DP disguise
+
+Look for:
+
+* Number of ways
+* Minimum/maximum cost
+* Repeated states
+* Choices at every position
+* Constraints depending on previous choices
+
+## 20.6 Backtracking disguise
+
+Look for:
+
+* Generate all valid configurations
+* Choose/unchoose
+* Explore every possible arrangement
+* Small input but huge combinatorial state space
+
+## 20.7 Bit manipulation disguise
+
+Look for:
+
+* XOR cancellation
+* Binary states
+* Subsets of a small set
+* O(1)-space constraints
+
+---
+
+# MODULE 21 — SECOND-LAYER MIXED PROBLEM PRACTICE
+
+Problems should increasingly combine techniques:
+
+### Arrays
+
+* Sorting + greedy
+* Hashing + prefix sum
+* Two pointers + sorting
+* Binary search + greedy
+* Heap + sorting
+* DP + prefix information
+
+### Strings
+
+* Hashmap + sliding window
+* Frequency array + two pointers
+* Recursion + string generation
+* DP + strings
+
+### Graphs
+
+* BFS + shortest path
+* DFS + cycle detection
+* DSU + connectivity
+* Graph + greedy
+
+### Trees
+
+* DFS + recursion
+* BFS + queue
+* BST + binary search
+
+### Matrix
+
+* Matrix + BFS
+* Matrix + DFS
+* Matrix + prefix sum
+* Matrix + simulation
+
+---
+
+# MODULE 22 — LIST 2 COMPLETION STANDARD
+
+At the end of List 2, the student should be able to face:
+
+* Standard TCS coding questions
+* TCS Digital/Prime-level coding questions with significantly greater confidence
+* Infosys DSE-style Medium problems
+* Infosys SP-style Medium/Medium-Hard problems
+* Typical campus coding rounds
+* Service-company OAs
+* Many non-FAANG startup OAs
+
+without needing to immediately jump into the advanced product-company syllabus.
+
+---
+
+# FINAL ORDER — LIST 2
+
+```text
+01. Linked Lists
+        ↓
+02. Advanced Stack / Monotonic Stack
+        ↓
+03. Advanced Queue / Monotonic Deque
+        ↓
+04. Advanced Matrix / Grid Problems
+        ↓
+05. Trees & BST
+        ↓
+06. Graph Fundamentals — BFS / DFS
+        ↓
+07. Topological Sort & Dependency Problems
+        ↓
+08. Shortest Path Fundamentals
+        ↓
+09. Placement-Level Dynamic Programming
+        ↓
+10. Backtracking & Search
+        ↓
+11. Bit Manipulation
+        ↓
+12. Disjoint Set Union
+        ↓
+13. Advanced Array Patterns
+        ↓
+14. Advanced String Techniques
+        ↓
+15. Advanced Sorting / Searching Extensions
+        ↓
+16. Iteration vs Recursion / Implementation Optimization
+        ↓
+17. Advanced Mathematics for Placement Coding
+        ↓
+18. Company/OA-Specific Problem Formats
+        ↓
+19. Timed TCS / Infosys / Campus OA Practice
+        ↓
+20. Second-Layer OA Pattern Recognition
+        ↓
+21. Mixed-Pattern Practice
+        ↓
+22. TCS / Infosys / Campus OA Readiness
+```
+
+### Where this leaves us
+
+**List 1 + List 2** now gives you a very substantial Indian-placement DSA curriculum.
+
+The major families intentionally **left out of both lists** are things such as advanced graph algorithms, advanced data structures, segment trees/Fenwick trees, sophisticated trie problems, advanced string algorithms, hard DP variants, and other high-end patterns. Those are precisely the territory for **List 3 — MAANG / high-profile product-company OAs**.
+
+That separation is intentional: for example, the additional uploaded material explicitly puts SCC, Tarjan bridges/articulation points, Bellman-Ford/Floyd-Warshall, KMP, segment trees, DSU mastery, two-heaps and line sweep into its harder OA layer. 
+
+[1]: https://papersadda.com/article/tcs-nqt-coding-section-2026/?utm_source=chatgpt.com "TCS NQT Coding Section 2026: 2 Qs, 45 Min, 30 Patterns | PA"
+[2]: https://www.reddit.com/r/PlacementsPrep/comments/1v73kmn/25th_july_2026_tcs_nqt_oncampus_coding_questions/?utm_source=chatgpt.com "25th July 2026 TCS NQT On-Campus Coding questions"
+[3]: https://www.reddit.com/r/infosys/comments/1vcj96b/online_coding_questions_1st_august_2026_10am_slot1/?utm_source=chatgpt.com "ONLINE CODING QUESTIONS - 1st August 2026 10AM SLOT-1"
+[4]: https://campusmonk.in/tcs-nqt-python-coding-questions-2026/?utm_source=chatgpt.com "TCS NQT Python Coding Questions 2026 – Campus Monk"
+
+
+# LIST 3 — DSA FOR MAANG / HIGH-PROFILE PRODUCT-COMPANY OAs FOR DATA ROLES
+
+**Scope:** This list contains only topics that are **not in List 1 or List 2** and are useful when moving from ordinary Indian placement OAs into **MAANG/FAANG and other high-profile product-company OAs**.
+
+This is the **third layer**: you should reach it only after the first two lists are comfortable.
+
+The uploaded MAANG curriculum explicitly covers advanced patterns such as bit manipulation, backtracking, tree patterns, DSU, topological sorting, shortest paths, Trie, advanced hashing, heap/deque techniques, multiple DP families, advanced string algorithms, and niche techniques. The additional patch also adds SCC, bridges/articulation points, Bellman-Ford/Floyd-Warshall, KMP, segment tree, DSU mastery, two-heaps and line sweep.  
+
+Because List 1 and List 2 already contain the foundational versions of many of these areas, this list focuses specifically on the **remaining advanced layer**.
+
+---
+
+# MODULE 1 — ADVANCED BACKTRACKING
+
+## 1.1 Advanced permutation/combination search
+
+* Permutations with complex constraints
+* Combination generation with pruning
+* Duplicate-state handling
+* Choosing exactly K elements
+* Ordering restrictions
+* Frequency-based permutation generation
+
+## 1.2 Constraint-based backtracking
+
+* N-Queens
+* Sudoku Solver
+* Word Search
+* Word Search II
+* Letter Combinations of Phone Number
+* Generate Parentheses
+* Palindrome Partitioning
+* Advanced maze/search problems
+
+## 1.3 Advanced pruning
+
+* Early rejection
+* Constraint propagation
+* Duplicate-state pruning
+* Bounding search space
+* Frequency-based pruning
+
+## 1.4 Backtracking + other techniques
+
+* Backtracking + Trie
+* Backtracking + hashing
+* Backtracking + memoization
+* Backtracking + bitmask/state encoding
+
+The MAANG source specifically identifies N-Queens, Sudoku, Word Search I/II, letter combinations, generate-parentheses and palindrome partitioning as major high-end backtracking patterns. 
+
+---
+
+# MODULE 2 — ADVANCED TREE PROBLEMS
+
+## 2.1 Advanced binary-tree patterns
+
+* Serialize and deserialize binary tree
+* Complex path problems
+* Multiple-path aggregation
+* Tree reconstruction variants
+* Subtree matching
+* Tree equivalence under transformations
+
+## 2.2 Advanced tree recursion
+
+* Bottom-up tree DP
+* Top-down tree state propagation
+* Passing ancestor state
+* Combining left/right subtree states
+* Multi-value returns from recursion
+
+## 2.3 Advanced LCA
+
+* LCA in arbitrary binary trees
+* LCA with parent pointers
+* LCA for multiple queries
+* Repeated LCA queries
+
+## 2.4 Advanced tree views / traversal
+
+* Zig-zag traversal
+* Vertical traversal
+* Diagonal traversal variants
+* Boundary traversal variants
+* Complex level-order state
+
+## 2.5 Advanced BST problems
+
+* BST to sorted array
+* Recover corrupted BST
+* Range-based BST operations
+* Advanced predecessor/successor problems
+* Iterators over BST
+* Kth-order statistics with structural reasoning
+
+## 2.6 Advanced tree optimization
+
+* Tree recursion → DP
+* Subtree state caching
+* Advanced path aggregation
+
+## 2.7 Binary lifting
+
+* Binary lifting concept
+* LCA with binary lifting
+* Ancestor queries
+* Kth ancestor
+* Jump pointers
+
+The source explicitly includes serialization/deserialization, advanced tree recursion, LCA variants and binary lifting as the deeper tree layer. 
+
+---
+
+# MODULE 3 — ADVANCED GRAPH ALGORITHMS
+
+## 3.1 Strongly Connected Components
+
+* SCC concept
+* Kosaraju's Algorithm
+* Two-pass DFS
+* Transposed graph
+* Component condensation concept
+
+## 3.2 Bridges
+
+* Bridge concept
+* Discovery time
+* Low-link value
+* Tarjan bridge algorithm
+* Finding critical connections
+
+## 3.3 Articulation points
+
+* Cut vertices
+* Discovery/low arrays
+* Tarjan articulation-point algorithm
+
+The uploaded patch specifically identifies Kosaraju SCC and Tarjan bridges/articulation points as hard algorithms for Amazon/Google-level preparation. 
+
+---
+
+# MODULE 4 — ADVANCED SHORTEST-PATH ALGORITHMS
+
+## 4.1 Bellman-Ford
+
+* Relaxation
+* Repeated relaxation
+* Negative-weight edges
+* Negative-cycle detection
+* When Dijkstra cannot be used
+
+## 4.2 Floyd-Warshall
+
+* All-pairs shortest path
+* Intermediate-node DP
+* Distance matrix
+* Negative-cycle detection concept
+
+## 4.3 Advanced shortest-path reasoning
+
+* Choosing BFS vs Dijkstra vs Bellman-Ford
+* Choosing single-source vs all-pairs
+* State-augmented shortest path
+* Shortest path with additional constraints
+
+The uploaded MAANG material lists Bellman-Ford/Floyd-Warshall as unnecessary for ordinary OAs, while the separate patch explicitly adds them as part of the hard Amazon/Google preparation layer; therefore they belong here rather than List 2.  
+
+---
+
+# MODULE 5 — ADVANCED GRAPH COLORING
+
+## 5.1 Bipartite graphs
+
+* Bipartite definition
+* 2-coloring
+* BFS coloring
+* DFS coloring
+* Detect odd-length cycle
+
+## 5.2 Applications
+
+* Graph partitioning
+* Conflict detection
+* Scheduling conflicts
+* Matching-style prerequisites
+* Two-group assignment
+
+## 5.3 Advanced graph coloring
+
+* Multi-coloring concept
+* Chromatic-number awareness
+* Constraint-based coloring
+
+The uploaded MAANG curriculum identifies bipartite checking and graph coloring as a separate graph technique appearing in product-company preparation. 
+
+---
+
+# MODULE 6 — DSU / UNION-FIND MASTERY
+
+List 2 already contains ordinary DSU. This module is the **advanced DSU layer**.
+
+## 6.1 Advanced DSU operations
+
+* Path compression analysis
+* Union by rank
+* Union by size
+* Component counting
+* Maintaining component metadata
+
+## 6.2 Advanced applications
+
+* Accounts Merge
+* Redundant Connection variants
+* Dynamic connectivity
+* Network connection optimization
+* Component-size tracking
+* Connectivity after repeated unions
+
+## 6.3 DSU + other techniques
+
+* DSU + sorting
+* DSU + offline processing
+* DSU + graph construction
+* DSU for Kruskal-based problems
+
+The patch explicitly calls for DSU mastery with path compression/union-by-rank and applications such as Accounts Merge and network connectivity. 
+
+---
+
+# MODULE 7 — ADVANCED TRIE
+
+## 7.1 Trie fundamentals at implementation depth
+
+* Trie node optimization
+* Character-indexed children
+* End-of-word markers
+* Prefix traversal
+
+## 7.2 Advanced Trie problems
+
+* Word Search II
+* Autocomplete
+* Prefix matching
+* Dictionary matching
+* Multiple-word search
+
+## 7.3 Trie combinations
+
+### Trie + DFS
+
+* Word Search II
+* Board word matching
+
+### Trie + DP
+
+* Word segmentation-style problems
+* Prefix-based dynamic programming
+
+### Trie + XOR
+
+* Maximum XOR of two numbers
+* Binary Trie
+* XOR-prefix structures
+
+## 7.4 Trie optimization
+
+* Memory optimization
+* Sparse child representation
+* Large dictionary handling
+
+The source explicitly identifies Trie + DFS, Trie + DP and XOR-Trie applications as the advanced Trie layer. 
+
+---
+
+# MODULE 8 — ADVANCED HASHING & CACHE DESIGN
+
+List 1 already contains ordinary hashing, while List 2 includes basic string hashing. This module covers higher-level hashing structures.
+
+## 8.1 Rolling hash
+
+* Polynomial rolling hash
+* Prefix hashes
+* Substring hash
+* O(1)-style substring comparison after preprocessing
+* Collision awareness
+* Double hashing concept
+
+## 8.2 Advanced hashing applications
+
+* Repeated substring detection
+* Duplicate substring detection
+* String matching
+* Hash-based pattern identification
+
+## 8.3 Hash collision handling
+
+* Collision concept
+* Why hash collisions matter
+* Chaining concept
+* Open addressing concept
+
+## 8.4 LRU Cache
+
+* Hashmap + doubly linked list
+* O(1) get
+* O(1) put
+* Eviction
+* Recency ordering
+
+## 8.5 LFU Cache
+
+* Frequency tracking
+* Recency within frequency
+* Multi-map structure
+* O(1)-style operations
+
+The uploaded source explicitly places rolling hash, LRU/LFU cache design and hash collision handling under advanced hashing. 
+
+---
+
+# MODULE 9 — ADVANCED HEAP & PRIORITY-QUEUE PATTERNS
+
+List 2 covers ordinary heap/top-K patterns. This module handles more complex state management.
+
+## 9.1 Two heaps
+
+* Min heap + max heap
+* Maintain lower/upper half
+* Median maintenance
+* Balance heaps
+
+## 9.2 Median from Data Stream
+
+* Dynamic insertion
+* Median query
+* Heap balancing
+* Duplicate handling
+
+## 9.3 Advanced heap problems
+
+* IPO / Maximize Capital
+* Dynamic resource allocation
+* Multiple competing priorities
+* Greedy + two heaps
+* Heap + intervals
+
+The patch explicitly adds Two Heaps, Median from Data Stream and IPO/Maximize Capital. 
+
+---
+
+# MODULE 10 — ADVANCED DEQUE / MONOTONIC QUEUE
+
+List 2 contains the standard monotonic deque. This module goes into more difficult applications.
+
+## 10.1 Advanced sliding-window optimization
+
+* Maximum/minimum over dynamically constrained windows
+* Multiple window constraints
+* Prefix sum + deque
+
+## 10.2 Shortest Subarray with Sum at Least K
+
+* Prefix sum
+* Monotonic deque
+* Maintaining candidate prefixes
+* Removing dominated candidates
+
+## 10.3 General monotonic-queue framework
+
+* Dominance
+* Candidate elimination
+* Expiration
+* Maintaining optimal candidate
+
+The patch specifically identifies monotonic deque and Shortest Subarray with Sum at Least K as advanced OA techniques. 
+
+---
+
+# MODULE 11 — SEGMENT TREE
+
+## 11.1 Segment-tree fundamentals
+
+* Why segment trees exist
+* Build
+* Range query
+* Point update
+* Tree representation
+* Recursive query
+* Recursive update
+
+## 11.2 Range queries
+
+* Range sum
+* Range minimum
+* Range maximum
+* Range GCD concept
+
+## 11.3 Mutable-array problems
+
+* Range Sum Query — Mutable
+* Range Minimum Query
+* Point updates + repeated queries
+
+## 11.4 Complexity
+
+Understand:
+
+* O(N) build
+* O(log N) query
+* O(log N) update
+
+## 11.5 Advanced segment trees
+
+* Lazy propagation concept
+* Range update concept
+
+For this track, **basic build/query/update is enough; lazy propagation is not a core requirement**. The uploaded patch explicitly gives this same boundary. 
+
+---
+
+# MODULE 12 — FENWICK TREE / BINARY INDEXED TREE
+
+## 12.1 Fenwick-tree fundamentals
+
+* Prefix-sum query
+* Point update
+* Binary indexed tree structure
+* Lowbit operation
+
+## 12.2 Applications
+
+* Dynamic prefix sums
+* Frequency updates
+* Counting inversions
+* Range-query problems
+
+## 12.3 Fenwick vs segment tree
+
+Understand:
+
+* When Fenwick is simpler
+* When Segment Tree is more powerful
+* Supported operation differences
+* Complexity differences
+
+---
+
+# MODULE 13 — ADVANCED RANGE-QUERY TECHNIQUES
+
+## 13.1 Difference arrays at advanced level
+
+* Range updates
+* Multiple range modifications
+* Recover final values
+* Lazy-style thinking
+
+## 13.2 Coordinate compression
+
+* Compress large coordinate values
+* Preserve order
+* Map sparse values to dense indexes
+* Prepare for Fenwick/Segment Tree
+
+## 13.3 Offline query processing
+
+* Sort queries
+* Process events incrementally
+* Precompute information
+* Answer queries in an efficient order
+
+---
+
+# MODULE 14 — LINE SWEEP / EVENT PROCESSING
+
+## 14.1 Line-sweep fundamentals
+
+* Convert intervals to events
+* Sort event points
+* Maintain active state
+* Sweep left-to-right
+
+## 14.2 Classic problems
+
+* Number of Airplanes in the Sky
+* Maximum concurrent intervals
+* Overlapping events
+* Meeting/resource allocation
+
+## 14.3 Advanced event ordering
+
+* Start/end tie handling
+* Event priority
+* Heap + sweep line
+* Coordinate compression + sweep
+
+## 14.4 Calendar problems
+
+* My Calendar II
+* My Calendar III
+* Overlapping booking detection
+
+The patch explicitly adds line sweep, Number of Airplanes in the Sky and My Calendar II/III. 
+
+---
+
+# MODULE 15 — ADVANCED DYNAMIC PROGRAMMING
+
+List 2 already covers ordinary 2D DP, knapsack, subset, LIS/LCS, partition and state-based DP. The following is the next layer.
+
+## 15.1 Advanced string DP
+
+* Edit Distance in depth
+* Regular Expression Matching
+* Distinct Subsequences
+* Palindrome Partitioning II
+* Advanced palindromic subsequence problems
+
+## 15.2 Advanced subsequence DP
+
+* LIS optimization
+* O(N log N) LIS
+* Patience sorting concept
+* Advanced sequence reconstruction
+* Multiple-condition subsequences
+
+## 15.3 Advanced knapsack/state-space DP
+
+* Multiple constraints
+* Multi-dimensional knapsack
+* Bounded knapsack
+* State compression
+* Optimization of state transitions
+
+## 15.4 DP on trees
+
+* House Robber III
+* Tree diameter as DP
+* Maximum path sum
+* Subtree state
+* Parent/child state transitions
+
+## 15.5 State-machine DP
+
+* Stock trading variants
+* Cooldown
+* Transaction limits
+* Multiple states
+* Paint House
+* State transition tables
+
+## 15.6 Bitmask DP
+
+* Small-state subset representation
+* Traveling-salesman-style state
+* Assignment problems
+* Subset-state transitions
+
+## 15.7 Digit DP
+
+* Count numbers satisfying digit constraints
+* Position/state/tight formulation
+* Range digit counting
+
+## 15.8 Interval DP
+
+* Matrix-chain-style reasoning
+* Partitioning intervals
+* Optimal split
+* Palindrome partitioning variants
+
+The uploaded MAANG source explicitly separates DP into 1D, 2D, strings, subsequences, trees and state-machine DP, while the additional materials extend into advanced OA layers. 
+
+---
+
+# MODULE 16 — ADVANCED STRING ALGORITHMS
+
+## 16.1 KMP
+
+* Prefix function
+* LPS array
+* Pattern preprocessing
+* O(N) string matching
+* Multiple pattern occurrences
+
+## 16.2 Z Algorithm
+
+* Z-array
+* Prefix matching
+* Pattern matching
+* String preprocessing
+
+## 16.3 Advanced palindrome algorithms
+
+* Expand-around-center optimization
+* DP-based palindrome detection
+* Manacher's Algorithm
+* O(N) longest palindromic substring
+
+## 16.4 Suffix-based techniques
+
+* Suffix array concept
+* Suffix-based sorting
+* Longest common prefix concept
+* Advanced substring queries
+
+The uploaded materials explicitly identify KMP and optional Z-function, while the first MAANG document also calls out Manacher's algorithm and suffix-oriented techniques as deeper material.  
+
+---
+
+# MODULE 17 — ADVANCED ARRAY / OPTIMIZATION TECHNIQUES
+
+## 17.1 Inversion and order statistics
+
+* Count inversions efficiently
+* Count smaller after self
+* Merge-sort-based counting
+* Fenwick-based counting
+
+## 17.2 Advanced majority patterns
+
+* Boyer-Moore variants
+* Majority > N/3
+* Multiple candidates
+
+## 17.3 Advanced in-place algorithms
+
+* Morris traversal concept
+* O(1)-space traversal
+* In-place rearrangement
+* Cyclic placement
+* Index encoding
+
+## 17.4 Nested-data processing
+
+* Flatten nested structures
+* Flatten nested iterators
+* Stack-based flattening
+* Deep recursive flattening
+
+The niche-technique section of the uploaded MAANG material explicitly includes jagged arrays, flattening, inversion counting, Boyer-Moore and Morris traversal. 
+
+---
+
+# MODULE 18 — ADVANCED BIT MANIPULATION
+
+## 18.1 Advanced XOR
+
+* Single Number I
+* Single Number II
+* Single Number III
+* XOR range
+* XOR prefix properties
+
+## 18.2 Bit counting
+
+* Brian Kernighan
+* Population count
+* Bit-position analysis
+
+## 18.3 Advanced masks
+
+* Subset enumeration
+* Submask enumeration
+* State representation
+* Mask-based optimization
+
+## 18.4 Two's complement
+
+* Representation
+* Negative numbers
+* Bit-level reasoning
+
+## 18.5 Bitwise optimization
+
+* O(1)-space tricks
+* Bit-based state compression
+* XOR-based elimination
+
+The source specifically lists XOR variants, number-of-1-bits, reverse bits, power-of-two detection, subset generation and two's-complement reasoning. 
+
+---
+
+# MODULE 19 — ADVANCED COMBINATORICS & MATHEMATICS
+
+## 19.1 Modular combinatorics
+
+* `nCr`
+* `nPr`
+* Modular combinations
+* Factorial precomputation
+* Inverse factorial
+* Fermat's Little Theorem
+
+## 19.2 Advanced prime techniques
+
+* Sieve to large limits
+* Smallest prime factor
+* Prime factorization at scale
+* Prime-counting-related preprocessing
+
+## 19.3 Fast exponentiation
+
+* Binary exponentiation
+* Modular exponentiation
+* Fast power
+
+## 19.4 Number-theoretic techniques
+
+* Extended Euclidean algorithm
+* Modular inverse
+* GCD identities
+* Chinese Remainder Theorem concept
+
+## 19.5 Advanced combinatorial counting
+
+* Inclusion/exclusion concept
+* Counting arrangements
+* Counting states under constraints
+
+The patch explicitly adds modular combinations using inverse factorial/Fermat and large-scale prime generation. 
+
+---
+
+# MODULE 20 — ADVANCED GREEDY & HEAP COMBINATIONS
+
+## 20.1 Heap + greedy
+
+* IPO / maximize capital
+* Choose best available candidate repeatedly
+* Dynamic resource allocation
+
+## 20.2 Two-heaps + greedy
+
+* Median maintenance
+* Dynamic balancing
+* Partitioning around median
+
+## 20.3 Interval + heap
+
+* Meeting rooms at scale
+* Resource allocation
+* Scheduling with dynamically changing availability
+
+## 20.4 Event-driven greedy
+
+* Process sorted events
+* Activate/deactivate candidates
+* Maintain optimal active candidate
+
+---
+
+# MODULE 21 — ADVANCED DATA-STRUCTURE DESIGN
+
+## 21.1 LRU Cache
+
+* Hashmap
+* Doubly linked list
+* O(1) get/put
+* Eviction
+
+## 21.2 LFU Cache
+
+* Frequency buckets
+* Recency inside frequency
+* Multiple linked structures
+
+## 21.3 Custom ordered structures
+
+* Maintain sorted dynamic data
+* Ordered frequency structures
+* Lazy deletion
+* Heap + hashmap combinations
+
+## 21.4 Iterator-style structures
+
+* Flatten nested iterator
+* Lazy traversal
+* State-preserving iterator
+
+---
+
+# MODULE 22 — ADVANCED MATRIX / ARRAY STRUCTURES
+
+## 22.1 Jagged arrays
+
+* Non-rectangular matrices
+* Variable row lengths
+* Pascal's Triangle
+* Row-dependent traversal
+
+## 22.2 Large sparse coordinate problems
+
+* Coordinate compression
+* Sparse representation
+* Event-based processing
+
+## 22.3 Advanced matrix optimization
+
+* In-place transformations
+* O(1)-extra-space strategies
+* Flattening/index encoding
+
+---
+
+# MODULE 23 — ADVANCED PATTERN COMBINATION
+
+At this level, the main skill is no longer knowing individual algorithms.
+
+The teacher should give problems requiring combinations such as:
+
+### Graph + DSU
+
+* Connectivity + sorting
+* Dynamic components
+* Redundant edges
+
+### Graph + Heap
+
+* Weighted shortest paths
+* Priority BFS variants
+
+### Graph + DP
+
+* DP over DAG
+* Longest path in DAG
+* Dependency optimization
+
+### Trie + Backtracking
+
+* Word Search II
+* Dictionary board search
+
+### Trie + DP
+
+* Prefix-based segmentation
+* Word-break-style optimization
+
+### Segment Tree + Binary Search
+
+* Search for first index satisfying a condition
+* Dynamic range constraints
+
+### Fenwick + Coordinate Compression
+
+* Dynamic ranking
+* Inversion/order-statistic problems
+
+### Hashmap + Linked List
+
+* LRU cache
+
+### Heap + Sliding Window
+
+* Dynamic top-K within a window
+
+### Prefix Sum + Monotonic Deque
+
+* Shortest Subarray ≥ K
+
+### Sweep Line + Heap
+
+* Resource allocation
+* Scheduling
+
+---
+
+# MODULE 24 — PRODUCT-COMPANY OA STRATEGY
+
+## 24.1 Hidden-pattern identification
+
+The question should **not tell you the algorithm**.
+
+Learn to infer:
+
+* "Nearest future greater" → monotonic stack
+* "Dependencies" → graph/topological sort
+* "Repeated range query + updates" → segment tree/Fenwick
+* "Prefix matching" → Trie/KMP
+* "Dynamic connectivity" → DSU
+* "Many states across positions" → DP
+* "All possible valid configurations" → backtracking
+* "All-pairs path" → Floyd-Warshall
+* "Negative edge" → Bellman-Ford
+* "Many interval events" → line sweep
+
+## 24.2 Multiple valid solutions
+
+Learn to compare:
+
+* O(N²)
+* O(N log N)
+* O(N)
+* O(log N)
+* O(1) auxiliary space
+
+and justify why a higher-quality product-company solution is preferable.
+
+## 24.3 Constraint-driven algorithm selection
+
+Given constraints such as:
+
+* N ≤ 20
+* N ≤ 10³
+* N ≤ 10⁵
+* N ≤ 10⁶
+
+infer the expected algorithmic complexity.
+
+---
+
+# MODULE 25 — HIGH-END OA SIMULATION
+
+## 25.1 MAANG-style single problems
+
+* 30–45 minute Medium
+* 45–60 minute Medium+
+* Hard problem exposure
+
+## 25.2 Multi-pattern problems
+
+Practice:
+
+* Tree + DP
+* Graph + shortest path
+* Trie + backtracking
+* Segment tree + binary search
+* Heap + greedy
+* DSU + sorting
+
+## 25.3 OA constraints
+
+Practice under:
+
+* Hidden tests
+* Strict time limits
+* Memory limits
+* Multiple test cases
+* Large input
+* Adversarial edge cases
+
+## 25.4 Interview/OA explanation
+
+Be able to explain:
+
+* Brute force
+* Why brute force fails
+* Key observation
+* Algorithm
+* Correctness intuition
+* Complexity
+* Tradeoffs
+
+---
+
+# MODULE 26 — NICHE HIGH-PROFILE OA TECHNIQUES
+
+These are not first-line preparation, but can appear in strong product-company OAs.
+
+## 26.1 Square Root Decomposition
+
+* Block decomposition
+* Static range queries
+* Range sum/min/max
+* Point updates
+* O(√N) query/update
+
+## 26.2 Bucket techniques
+
+* Bucket sort
+* Frequency buckets
+* Range-based grouping
+* Approximate ordering
+
+## 26.3 Advanced coordinate compression
+
+* Compress sparse coordinates
+* Event coordinates
+* Fenwick/segment-tree integration
+
+## 26.4 Advanced offline queries
+
+* Sort queries
+* Sort events
+* Incremental processing
+* Query reordering
+
+The uploaded MAANG source identifies square-root decomposition as a newer niche technique for static range-query problems. 
+
+---
+
+# MODULE 27 — DEFERRED / VERY HIGH-END TOPICS
+
+These are beyond ordinary MAANG preparation but can become relevant for **specialized high-profile product, HFT, competitive-programming-heavy or extremely difficult OAs**.
+
+* Heavy-Light Decomposition
+* Advanced segment-tree lazy propagation
+* Persistent segment trees
+* Advanced suffix arrays
+* Suffix automaton
+* Advanced computational geometry
+* Advanced game theory
+* Advanced combinatorial optimization
+
+These are **not required for ordinary MAANG preparation** and should only be touched after the rest of List 3 is mastered.
+
+The source material itself explicitly says segment trees/Fenwick trees can be omitted unless explicitly targeting competitive programming, and similarly calls KMP/Z and heavy number theory relatively niche. 
+
+---
+
+# FINAL ORDER — LIST 3
+
+```text
+01. Advanced Backtracking
+        ↓
+02. Advanced Trees
+        ↓
+03. Advanced Graph Algorithms
+        ↓
+04. Advanced Shortest Paths
+        ↓
+05. Advanced Graph Coloring / Bipartite Problems
+        ↓
+06. DSU Mastery
+        ↓
+07. Advanced Trie
+        ↓
+08. Advanced Hashing & Cache Design
+        ↓
+09. Advanced Heap / Two-Heap Patterns
+        ↓
+10. Advanced Deque / Monotonic Queue
+        ↓
+11. Segment Tree
+        ↓
+12. Fenwick Tree
+        ↓
+13. Advanced Range Queries & Offline Processing
+        ↓
+14. Line Sweep / Event Processing
+        ↓
+15. Advanced Dynamic Programming
+        ↓
+16. Advanced String Algorithms
+        ↓
+17. Advanced Array / Optimization Techniques
+        ↓
+18. Advanced Bit Manipulation
+        ↓
+19. Advanced Combinatorics & Mathematics
+        ↓
+20. Advanced Greedy + Heap Combinations
+        ↓
+21. Advanced Data-Structure Design
+        ↓
+22. Advanced Matrix / Sparse Structures
+        ↓
+23. Advanced Pattern Combination
+        ↓
+24. Product-Company OA Strategy
+        ↓
+25. High-End OA Simulation
+        ↓
+26. Niche High-Profile OA Techniques
+        ↓
+27. Deferred / Very High-End Topics
+```
+
+## The three-layer progression is now
+
+```text
+LIST 1
+DATA ROLES
+────────────────────────
+Python DSA
+Arrays
+Hashing
+Strings
+Sorting
+Two pointers
+Sliding window
+Prefix sums
+Binary search
+Matrices
+Basic stack/queue
+Heap
+Greedy
+Basic recursion
+Basic DP
+Data-oriented coding
+OA fundamentals
+        ↓
+LIST 2
+TCS / INFOSYS / CAMPUS
+────────────────────────
+Linked lists
+Monotonic stack/deque
+Grid BFS/DFS
+Trees/BST
+Graphs
+Topological sort
+Dijkstra
+Placement-level DP
+Backtracking
+Bit manipulation
+DSU
+Advanced arrays
+Advanced strings
+Advanced sorting
+Placement math
+Company-style OAs
+        ↓
+LIST 3
+MAANG / HIGH-PROFILE PRODUCT
+────────────────────────
+Advanced backtracking
+Advanced trees
+SCC
+Bridges
+Articulation points
+Advanced shortest paths
+Advanced DSU
+Advanced Trie
+Rolling hash
+LRU/LFU
+Two heaps
+Advanced monotonic deque
+Segment tree
+Fenwick tree
+Line sweep
+Advanced DP
+KMP/Z
+Manacher
+Advanced bit manipulation
+Advanced combinatorics
+Offline queries
+Coordinate compression
+Complex pattern combinations
+High-end OA simulation
+```
+
+This keeps the lists **progressive and mutually exclusive** rather than making List 3 merely a copy of the entire MAANG document.
