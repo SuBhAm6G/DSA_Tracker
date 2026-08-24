@@ -88,10 +88,7 @@ export default function LoginPage() {
           <span className="sidebar-logo-text">DSA Tracker</span>
         </div>
 
-        <h2 style={{ marginBottom: '0.25rem' }}>Welcome back</h2>
-        <p style={{ fontSize: '0.8rem', marginBottom: '1.5rem', color: 'var(--text-muted)' }}>
-          Track your DSA progress across 308 topics.
-        </p>
+        <h2 style={{ marginBottom: '1.5rem' }}>Welcome back</h2>
 
         <form onSubmit={handleEmailAuth} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.25rem' }}>
           <div className="form-group">

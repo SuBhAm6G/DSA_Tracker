@@ -237,7 +237,7 @@ code, kbd {
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.925rem;
   font-weight: 500;
   cursor: pointer;
   user-select: none;
@@ -273,7 +273,7 @@ code, kbd {
 
 .nav-item-sub {
   padding-left: 2rem;
-  font-size: 0.775rem;
+  font-size: 0.875rem;
 }
 
 .sidebar-bottom {
