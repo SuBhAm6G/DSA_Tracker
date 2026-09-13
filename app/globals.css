@@ -1454,6 +1454,7 @@ textarea.form-input {
 
   .topic-row {
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 0.625rem;
     padding: 0.75rem 0.875rem;
   }
