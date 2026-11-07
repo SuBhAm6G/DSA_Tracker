@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard, BookOpen, BarChart2, Activity,
-  User, Settings, ChevronRight, X, Code2
+  User, Settings, ChevronRight, X, Code2, Star
 } from 'lucide-react';
 import { useTheme } from '@/components/ThemeProvider';
 
@@ -87,6 +87,14 @@ export default function Sidebar({ open, onClose }: Props) {
               sub
             />
           ))}
+          <NavItem
+            href="/important"
+            icon={<Star size={12} />}
+            label="IMP Marked"
+            active={isActive('/important')}
+            sub
+            imp
+          />
 
           <div className="sidebar-section-label" style={{ marginTop: '0.25rem' }}>Analytics</div>
           <NavItem href="/statistics" icon={<BarChart2 size={14} />} label="Statistics" active={isActive('/statistics')} />
@@ -119,18 +127,19 @@ export default function Sidebar({ open, onClose }: Props) {
 }
 
 function NavItem({
-  href, icon, label, active, sub
+  href, icon, label, active, sub, imp
 }: {
   href: string;
   icon: React.ReactNode;
   label: string;
   active: boolean;
   sub?: boolean;
+  imp?: boolean;
 }) {
   return (
     <Link
       href={href}
-      className={`nav-item${sub ? ' nav-item-sub' : ''}${active ? ' active' : ''}`}
+      className={`nav-item${sub ? ' nav-item-sub' : ''}${active ? ' active' : ''}${imp ? ' nav-item-imp' : ''}`}
       aria-current={active ? 'page' : undefined}
     >
       {icon}

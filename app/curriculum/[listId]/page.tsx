@@ -7,6 +7,7 @@ import AppShell from '@/components/AppShell';
 import TopicDrawer from '@/components/TopicDrawer';
 import LanguageModal from '@/components/LanguageModal';
 import { useCurriculum } from '@/hooks/useCurriculum';
+import { useImportantSubtopics } from '@/hooks/useImportantSubtopics';
 import type { TopicWithProgress, ModuleWithTopics } from '@/lib/supabase/types';
 import { humanDate } from '@/lib/utils';
 import { createClient } from '@/lib/supabase/client';
@@ -30,6 +31,7 @@ export default function CurriculumPage() {
   const targetTopicSlug = searchParams.get('topic');
 
   const { lists, loading, toggleTopic, toggleSubtopic, userId, programmingLanguage, setProgrammingLanguage } = useCurriculum();
+  const { importantSet, toggleImportant } = useImportantSubtopics();
 
   const [expandedModules, setExpandedModules] = useState<Set<string>>(new Set());
   const [statusFilter, setStatusFilter]       = useState<StatusFilter>('all');
@@ -236,6 +238,8 @@ export default function CurriculumPage() {
                   onTopicClick={t => setSelectedTopic({ ...t, listName: list.short_name, moduleName: mod.name })}
                   onTopicCheck={handleToggle}
                   onSubtopicCheck={(t, st) => toggleSubtopic(t, st.slug, st.progress?.status, msg => setError(msg))}
+                  importantSet={importantSet}
+                  onToggleImportant={toggleImportant}
                 />
               ))
             )}
@@ -273,7 +277,7 @@ function MiniStat({ label, value, accent }: { label: string; value: string; acce
 }
 
 function ModuleAccordion({
-  module, expanded, onToggle, onTopicClick, onTopicCheck, onSubtopicCheck
+  module, expanded, onToggle, onTopicClick, onTopicCheck, onSubtopicCheck, importantSet, onToggleImportant
 }: {
   module: ModuleWithTopics;
   expanded: boolean;
@@ -281,6 +285,8 @@ function ModuleAccordion({
   onTopicClick: (t: TopicWithProgress) => void;
   onTopicCheck: (t: TopicWithProgress) => void;
   onSubtopicCheck: (t: TopicWithProgress, st: any) => void;
+  importantSet: Set<string>;
+  onToggleImportant: (slug: string) => void;
 }) {
   const pctDone = module.totalCount ? Math.round((module.completedCount / module.totalCount) * 100) : 0;
 
@@ -308,6 +314,8 @@ function ModuleAccordion({
               onTopicClick={onTopicClick}
               onTopicCheck={onTopicCheck}
               onSubtopicCheck={(st) => onSubtopicCheck(topic, st)}
+              importantSet={importantSet}
+              onToggleImportant={onToggleImportant}
             />
           ))}
         </div>
@@ -317,14 +325,17 @@ function ModuleAccordion({
 }
 
 function TopicRow({
-  topic, onTopicClick, onTopicCheck, onSubtopicCheck
+  topic, onTopicClick, onTopicCheck, onSubtopicCheck, importantSet, onToggleImportant
 }: {
   topic: TopicWithProgress;
   onTopicClick: (t: TopicWithProgress) => void;
   onTopicCheck: (t: TopicWithProgress) => void;
   onSubtopicCheck: (st: any) => void;
+  importantSet: Set<string>;
+  onToggleImportant: (slug: string) => void;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const [bouncingSlug, setBouncingSlug] = useState<string | null>(null);
   const status = topic.progress?.status ?? 'not_started';
   const done = status === 'completed';
   const inProg = status === 'in_progress';
@@ -332,6 +343,13 @@ function TopicRow({
   
   const completedSubtopics = hasSubtopics ? topic.subtopics!.filter(st => st.progress?.status === 'completed').length : 0;
   const totalSubtopics = hasSubtopics ? topic.subtopics!.length : 0;
+
+  function handleImpClick(e: React.MouseEvent, slug: string) {
+    e.stopPropagation();
+    setBouncingSlug(slug);
+    onToggleImportant(slug);
+    setTimeout(() => setBouncingSlug(null), 600);
+  }
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -383,19 +401,32 @@ function TopicRow({
         <div className="subtopic-list" style={{ display: 'flex', flexDirection: 'column', paddingLeft: '3.5rem', paddingBottom: '0.5rem', gap: '0.35rem' }}>
           {topic.subtopics!.map(st => {
             const stDone = st.progress?.status === 'completed';
+            const isImp = importantSet.has(st.slug);
+            const isBouncing = bouncingSlug === st.slug;
             return (
               <div 
                 key={st.slug} 
-                style={{ fontSize: '0.825rem', color: stDone ? 'var(--text-faint)' : 'var(--text)', display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}
-                onClick={() => onSubtopicCheck(st)}
+                style={{ fontSize: '0.825rem', color: stDone ? 'var(--text-faint)' : 'var(--text)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
               >
                 <div 
                   className={`checkbox${stDone ? ' checked' : ''}`} 
-                  style={{ width: 14, height: 14 }}
+                  style={{ width: 14, height: 14, cursor: 'pointer', flexShrink: 0 }}
+                  onClick={() => onSubtopicCheck(st)}
                 >
                   {stDone && <Check size={8} color="white" />}
                 </div>
-                <span style={{ textDecoration: stDone ? 'line-through' : 'none' }}>{st.name}</span>
+                <span 
+                  style={{ textDecoration: stDone ? 'line-through' : 'none', flex: 1, cursor: 'pointer' }}
+                  onClick={() => onSubtopicCheck(st)}
+                >{st.name}</span>
+                <button
+                  className={`imp-btn${isImp ? ' imp-btn--active' : ''}${isBouncing ? ' imp-btn--bounce' : ''}`}
+                  onClick={(e) => handleImpClick(e, st.slug)}
+                  title={isImp ? 'Unmark as Important' : 'Mark as Important'}
+                  aria-label={isImp ? 'Unmark as Important' : 'Mark as Important'}
+                >
+                  IMP
+                </button>
               </div>
             );
           })}

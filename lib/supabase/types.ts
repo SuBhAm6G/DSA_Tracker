@@ -106,6 +106,13 @@ export interface UserPreferences {
   timezone_display: string;
 }
 
+export interface UserImportantSubtopic {
+  id: string;
+  user_id: string;
+  subtopic_id: string; // subtopic slug
+  created_at: string;
+}
+
 export interface SubtopicWithProgress extends Subtopic {
   progress?: UserSubtopicProgress;
 }

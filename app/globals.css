@@ -1032,6 +1032,109 @@ textarea.form-input {
 }
 
 /* ============================================================
+   IMP BUTTON
+   ============================================================ */
+
+.imp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-family: var(--font-mono);
+  border-radius: var(--r-xs);
+  border: 1.5px solid var(--border-muted);
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.imp-btn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.imp-btn--active {
+  border-color: var(--danger);
+  background: var(--danger);
+  color: #fff;
+}
+
+.imp-btn--active:hover {
+  background: transparent;
+  color: var(--danger);
+}
+
+@keyframes imp-bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.35); }
+  60%  { transform: scale(0.9); }
+  80%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.imp-btn--bounce {
+  animation: imp-bounce 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* ============================================================
+   IMP MARKED SIDEBAR ITEM
+   ============================================================ */
+
+.nav-item-imp {
+  color: #DC2626 !important;
+}
+
+.nav-item-imp:hover,
+.nav-item-imp.active {
+  color: #DC2626 !important;
+  background: rgba(220, 38, 38, 0.1) !important;
+}
+
+/* ============================================================
+   IMP PAGE
+   ============================================================ */
+
+.imp-group-header {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 0 0.35rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 0.5rem;
+}
+
+.imp-subtopic-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--r-sm);
+  font-size: 0.85rem;
+  color: var(--text);
+  transition: background 0.1s;
+}
+
+.imp-subtopic-row:hover {
+  background: var(--bg-raised);
+}
+
+.imp-parent-label {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ============================================================
    PAGE SECTIONS
    ============================================================ */
 
