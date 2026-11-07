@@ -406,7 +406,7 @@ function TopicRow({
             return (
               <div 
                 key={st.slug} 
-                style={{ fontSize: '0.825rem', color: stDone ? 'var(--text-faint)' : 'var(--text)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                style={{ fontSize: '0.825rem', color: stDone ? 'var(--text-faint)' : 'var(--text)', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}
               >
                 <div 
                   className={`checkbox${stDone ? ' checked' : ''}`} 
@@ -416,7 +416,7 @@ function TopicRow({
                   {stDone && <Check size={8} color="white" />}
                 </div>
                 <span 
-                  style={{ textDecoration: stDone ? 'line-through' : 'none', flex: 1, cursor: 'pointer' }}
+                  style={{ textDecoration: stDone ? 'line-through' : 'none', cursor: 'pointer' }}
                   onClick={() => onSubtopicCheck(st)}
                 >{st.name}</span>
                 <button
